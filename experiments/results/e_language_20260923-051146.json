@@ -1,0 +1,331 @@
+{
+  "module": "e_language",
+  "run_at": "20260923-051146",
+  "model": "jev-1.13.0",
+  "total_usage": {
+    "input_tokens": 3036,
+    "output_tokens": 199
+  },
+  "records": [
+    {
+      "id": "exp19_ja",
+      "experiment": 19,
+      "title": "state も質問もすべて日本語",
+      "stock": "enoki_trading",
+      "condition": "ja",
+      "prediction": "positivity 0.96（conf 0.93）/ operating_down 0.97。Dと同じ",
+      "state": {
+        "対象銘柄": {
+          "名前": "榎木商事",
+          "日付": "2026-07-20",
+          "決算コメント": "当第2四半期の売上高は前年同期比6.2%増となりましたが、仕入価格の上昇を販売価格に転嫁しきれず、営業利益は同4.8%減となりました。通期予想は据え置きます。"
+        }
+      },
+      "questions": {
+        "positivity": {
+          "type": "score",
+          "instructions": "`対象銘柄.決算コメント` の内容がどれくらい前向きか。",
+          "criteria": [
+            "業績の悪化や先行きへの懸念が中心で、後ろ向きな内容。",
+            "良い材料と悪い材料が混ざっているか、どちらとも言えない内容。",
+            "業績の改善や計画の超過が中心で、前向きな内容。"
+          ]
+        },
+        "operating_down": {
+          "type": "noul",
+          "instructions": "`対象銘柄.決算コメント` によれば、営業利益は前年同期を下回った。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 569,
+        "output_tokens": 37
+      },
+      "answers": {
+        "positivity": {
+          "type": "score",
+          "score": 0.95,
+          "confidence": 0.93,
+          "legend": {
+            "0": "業績の悪化や先行きへの懸念が中心で、後ろ向きな内容。",
+            "1": "良い材料と悪い材料が混ざっているか、どちらとも言えない内容。",
+            "2": "業績の改善や計画の超過が中心で、前向きな内容。"
+          },
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.95,
+            "2": 0.0
+          }
+        },
+        "operating_down": {
+          "type": "noul",
+          "noul": 0.98
+        }
+      },
+      "summary": {
+        "positivity": "score=0.950 (conf=0.930)",
+        "operating_down": "noul=0.980"
+      }
+    },
+    {
+      "id": "exp19_en",
+      "experiment": 19,
+      "title": "同じ内容をすべて英語で",
+      "stock": "enoki_trading",
+      "condition": "en",
+      "prediction": "positivity 0.96（conf 0.93）多少言語の違いで前後するが大幅には変化しない/ operating_down 0.97。言語が変わっても数字は変わらないので",
+      "state": {
+        "target": {
+          "name": "Enoki Trading",
+          "date": "2026-07-20",
+          "earnings_comment": "Net sales for the second quarter rose 6.2% year on year, but we could not fully pass higher purchasing costs on to selling prices, so operating profit fell 4.8%. The full-year forecast is unchanged."
+        }
+      },
+      "questions": {
+        "positivity": {
+          "type": "score",
+          "instructions": "How positive is the content of `target.earnings_comment`?",
+          "criteria": [
+            "Mostly about deteriorating results or concerns about the outlook; a negative message.",
+            "A mix of good and bad points, or nothing clearly either way.",
+            "Mostly about improving results or beating the plan; a positive message."
+          ]
+        },
+        "operating_down": {
+          "type": "noul",
+          "instructions": "According to `target.earnings_comment`, operating profit was lower than in the same period a year earlier."
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 463,
+        "output_tokens": 37
+      },
+      "answers": {
+        "positivity": {
+          "type": "score",
+          "score": 0.88,
+          "confidence": 0.82,
+          "legend": {
+            "0": "Mostly about deteriorating results or concerns about the outlook; a negative message.",
+            "1": "A mix of good and bad points, or nothing clearly either way.",
+            "2": "Mostly about improving results or beating the plan; a positive message."
+          },
+          "probabilities": {
+            "0": 0.12,
+            "1": 0.88,
+            "2": 0.0
+          }
+        },
+        "operating_down": {
+          "type": "noul",
+          "noul": 0.98
+        }
+      },
+      "summary": {
+        "positivity": "score=0.880 (conf=0.820)",
+        "operating_down": "noul=0.980"
+      }
+    },
+    {
+      "id": "exp20_ja_state_en_question",
+      "experiment": 20,
+      "title": "state は日本語、質問は英語",
+      "stock": "enoki_trading",
+      "condition": "mixed",
+      "prediction": "0.9。0.9。質問文中に日本語のキーが入ることで下がりそうな気がする",
+      "state": {
+        "対象銘柄": {
+          "名前": "榎木商事",
+          "日付": "2026-07-20",
+          "決算コメント": "当第2四半期の売上高は前年同期比6.2%増となりましたが、仕入価格の上昇を販売価格に転嫁しきれず、営業利益は同4.8%減となりました。通期予想は据え置きます。"
+        }
+      },
+      "questions": {
+        "positivity": {
+          "type": "score",
+          "instructions": "How positive is the content of `対象銘柄.決算コメント`?",
+          "criteria": [
+            "Mostly about deteriorating results or concerns about the outlook; a negative message.",
+            "A mix of good and bad points, or nothing clearly either way.",
+            "Mostly about improving results or beating the plan; a positive message."
+          ]
+        },
+        "operating_down": {
+          "type": "noul",
+          "instructions": "According to `対象銘柄.決算コメント`, operating profit was lower than in the same period a year earlier."
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 521,
+        "output_tokens": 37
+      },
+      "answers": {
+        "positivity": {
+          "type": "score",
+          "score": 0.96,
+          "confidence": 0.93,
+          "legend": {
+            "0": "Mostly about deteriorating results or concerns about the outlook; a negative message.",
+            "1": "A mix of good and bad points, or nothing clearly either way.",
+            "2": "Mostly about improving results or beating the plan; a positive message."
+          },
+          "probabilities": {
+            "0": 0.04,
+            "1": 0.96,
+            "2": 0.0
+          }
+        },
+        "operating_down": {
+          "type": "noul",
+          "noul": 0.98
+        }
+      },
+      "summary": {
+        "positivity": "score=0.960 (conf=0.930)",
+        "operating_down": "noul=0.980"
+      }
+    },
+    {
+      "id": "exp21_upward_revision",
+      "experiment": 21,
+      "title": "上方修正：同社は、通期の営業利益予想を上方修正したと発表した。",
+      "stock": "fujimi_logistics",
+      "condition": "ja",
+      "prediction": "1。明確",
+      "state": {
+        "銘柄": {
+          "名前": "富士見運輸",
+          "日付": "2026-07-22"
+        },
+        "ニュース": "同社は、通期の営業利益予想を上方修正したと発表した。"
+      },
+      "questions": {
+        "good_for_profit": {
+          "type": "noul",
+          "instructions": "`ニュース` の内容は、同社の利益にとってプラスの材料である。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 367,
+        "output_tokens": 22
+      },
+      "answers": {
+        "good_for_profit": {
+          "type": "noul",
+          "noul": 0.96
+        }
+      },
+      "summary": {
+        "good_for_profit": "noul=0.960"
+      }
+    },
+    {
+      "id": "exp21_downward_revision",
+      "experiment": 21,
+      "title": "下方修正：同社は、通期の売上高予想を下方修正したと発表した。",
+      "stock": "fujimi_logistics",
+      "condition": "ja",
+      "prediction": "0。明確",
+      "state": {
+        "銘柄": {
+          "名前": "富士見運輸",
+          "日付": "2026-07-23"
+        },
+        "ニュース": "同社は、通期の売上高予想を下方修正したと発表した。"
+      },
+      "questions": {
+        "good_for_profit": {
+          "type": "noul",
+          "instructions": "`ニュース` の内容は、同社の利益にとってプラスの材料である。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 366,
+        "output_tokens": 22
+      },
+      "answers": {
+        "good_for_profit": {
+          "type": "noul",
+          "noul": 0.03
+        }
+      },
+      "summary": {
+        "good_for_profit": "noul=0.030"
+      }
+    },
+    {
+      "id": "exp21_impairment",
+      "experiment": 21,
+      "title": "減損：同社は、海外子会社の固定資産について減損損失を計上すると発表した。",
+      "stock": "fujimi_logistics",
+      "condition": "ja",
+      "prediction": "0。明確",
+      "state": {
+        "銘柄": {
+          "名前": "富士見運輸",
+          "日付": "2026-07-24"
+        },
+        "ニュース": "同社は、海外子会社の固定資産について減損損失を計上すると発表した。"
+      },
+      "questions": {
+        "good_for_profit": {
+          "type": "noul",
+          "instructions": "`ニュース` の内容は、同社の利益にとってプラスの材料である。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 376,
+        "output_tokens": 22
+      },
+      "answers": {
+        "good_for_profit": {
+          "type": "noul",
+          "noul": 0.03
+        }
+      },
+      "summary": {
+        "good_for_profit": "noul=0.030"
+      }
+    },
+    {
+      "id": "exp21_extraordinary_loss",
+      "experiment": 21,
+      "title": "特別損失：同社は、配送センターの閉鎖に伴う費用を特別損失として計上する。",
+      "stock": "fujimi_logistics",
+      "condition": "ja",
+      "prediction": "0。明確",
+      "state": {
+        "銘柄": {
+          "名前": "富士見運輸",
+          "日付": "2026-07-27"
+        },
+        "ニュース": "同社は、配送センターの閉鎖に伴う費用を特別損失として計上する。"
+      },
+      "questions": {
+        "good_for_profit": {
+          "type": "noul",
+          "instructions": "`ニュース` の内容は、同社の利益にとってプラスの材料である。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 374,
+        "output_tokens": 22
+      },
+      "answers": {
+        "good_for_profit": {
+          "type": "noul",
+          "noul": 0.04
+        }
+      },
+      "summary": {
+        "good_for_profit": "noul=0.040"
+      }
+    }
+  ]
+}

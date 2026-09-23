@@ -1,0 +1,678 @@
+{
+  "module": "a_numbers_and_labels",
+  "run_at": "20260922-063938",
+  "model": "jev-1.13.0",
+  "total_usage": {
+    "input_tokens": 5955,
+    "output_tokens": 392
+  },
+  "records": [
+    {
+      "id": "exp1_aoi_raw",
+      "experiment": 1,
+      "title": "蒼井フーズ：25日線と75日線を生の数値で渡す",
+      "stock": "aoi_foods",
+      "condition": "raw",
+      "prediction": "0.97。結果は明白だから割と簡単に判断できると思う。",
+      "state": {
+        "銘柄": {
+          "名前": "蒼井フーズ",
+          "日付": "2026-07-31",
+          "25日移動平均": 1471.15,
+          "75日移動平均": 1418.59
+        }
+      },
+      "questions": {
+        "trend_compare": {
+          "type": "noul",
+          "instructions": "この銘柄の25日移動平均は、75日移動平均より大きい。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 368,
+        "output_tokens": 21
+      },
+      "answers": {
+        "trend_compare": {
+          "type": "noul",
+          "noul": 0.98
+        }
+      },
+      "summary": {
+        "trend_compare": "noul=0.980"
+      }
+    },
+    {
+      "id": "exp1_aoi_label",
+      "experiment": 1,
+      "title": "蒼井フーズ：トレンドのラベルだけを渡す（上昇トレンド）",
+      "stock": "aoi_foods",
+      "condition": "label",
+      "prediction": "0.8。上昇トレンドの時、25日線は75日線を上回るがそうでない時も考慮されるためrawよりは下がると思う。",
+      "state": {
+        "銘柄": {
+          "名前": "蒼井フーズ",
+          "日付": "2026-07-31",
+          "トレンド": "上昇トレンド"
+        }
+      },
+      "questions": {
+        "trend_compare": {
+          "type": "noul",
+          "instructions": "この銘柄の25日移動平均は、75日移動平均より大きい。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 349,
+        "output_tokens": 21
+      },
+      "answers": {
+        "trend_compare": {
+          "type": "noul",
+          "noul": 0.68
+        }
+      },
+      "summary": {
+        "trend_compare": "noul=0.680"
+      }
+    },
+    {
+      "id": "exp1_beniya_raw",
+      "experiment": 1,
+      "title": "紅屋電機：25日線と75日線を生の数値で渡す",
+      "stock": "beniya_electric",
+      "condition": "raw",
+      "prediction": "0.1。先ほどよりも差が大きく判定は簡単になるため値は0に限りなく近いはず",
+      "state": {
+        "銘柄": {
+          "名前": "紅屋電機",
+          "日付": "2026-07-31",
+          "25日移動平均": 2765.16,
+          "75日移動平均": 2873.87
+        }
+      },
+      "questions": {
+        "trend_compare": {
+          "type": "noul",
+          "instructions": "この銘柄の25日移動平均は、75日移動平均より大きい。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 366,
+        "output_tokens": 21
+      },
+      "answers": {
+        "trend_compare": {
+          "type": "noul",
+          "noul": 0.02
+        }
+      },
+      "summary": {
+        "trend_compare": "noul=0.020"
+      }
+    },
+    {
+      "id": "exp1_beniya_label",
+      "experiment": 1,
+      "title": "紅屋電機：トレンドのラベルだけを渡す（下降トレンド）",
+      "stock": "beniya_electric",
+      "condition": "label",
+      "prediction": "0.2。exp1_aoi_labelと同じでrawよりは高くなりそう",
+      "state": {
+        "銘柄": {
+          "名前": "紅屋電機",
+          "日付": "2026-07-31",
+          "トレンド": "下降トレンド"
+        }
+      },
+      "questions": {
+        "trend_compare": {
+          "type": "noul",
+          "instructions": "この銘柄の25日移動平均は、75日移動平均より大きい。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 346,
+        "output_tokens": 21
+      },
+      "answers": {
+        "trend_compare": {
+          "type": "noul",
+          "noul": 0.24
+        }
+      },
+      "summary": {
+        "trend_compare": "noul=0.240"
+      }
+    },
+    {
+      "id": "exp1_chidori_raw",
+      "experiment": 1,
+      "title": "千鳥化学：25日線と75日線を生の数値で渡す",
+      "stock": "chidori_chemical",
+      "condition": "raw",
+      "prediction": "0.97。ただの数値の計算なのでexp1_aoi_rawと変わらなそう。",
+      "state": {
+        "銘柄": {
+          "名前": "千鳥化学",
+          "日付": "2026-07-31",
+          "25日移動平均": 880.51,
+          "75日移動平均": 879.97
+        }
+      },
+      "questions": {
+        "trend_compare": {
+          "type": "noul",
+          "instructions": "この銘柄の25日移動平均は、75日移動平均より大きい。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 364,
+        "output_tokens": 21
+      },
+      "answers": {
+        "trend_compare": {
+          "type": "noul",
+          "noul": 0.97
+        }
+      },
+      "summary": {
+        "trend_compare": "noul=0.970"
+      }
+    },
+    {
+      "id": "exp1_chidori_label",
+      "experiment": 1,
+      "title": "千鳥化学：トレンドのラベルだけを渡す（横ばい）",
+      "stock": "chidori_chemical",
+      "condition": "label",
+      "prediction": "0.5。これは真ん中であってほしい。もしかしたらネットの横ばいという情報が偏りがあって少しズレるかもしれないが大きなずれはないはず。",
+      "state": {
+        "銘柄": {
+          "名前": "千鳥化学",
+          "日付": "2026-07-31",
+          "トレンド": "横ばい"
+        }
+      },
+      "questions": {
+        "trend_compare": {
+          "type": "noul",
+          "instructions": "この銘柄の25日移動平均は、75日移動平均より大きい。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 343,
+        "output_tokens": 21
+      },
+      "answers": {
+        "trend_compare": {
+          "type": "noul",
+          "noul": 0.41
+        }
+      },
+      "summary": {
+        "trend_compare": "noul=0.410"
+      }
+    },
+    {
+      "id": "exp2_enoki_raw",
+      "experiment": 2,
+      "title": "榎木商事：前日比 -2.9% を生の数値で渡す",
+      "stock": "enoki_trading",
+      "condition": "raw",
+      "prediction": "big_drop=0.3。大幅ではないのではないが下落ではあるので。move_size=1.2。下落ではあるが大幅ではないので。",
+      "state": {
+        "銘柄": {
+          "名前": "榎木商事",
+          "日付": "2026-07-31",
+          "前日終値": 1572.65,
+          "終値": 1527.04,
+          "前日比（%）": -2.9
+        }
+      },
+      "questions": {
+        "big_drop": {
+          "type": "noul",
+          "instructions": "この銘柄は、この日に大幅な下落をした。"
+        },
+        "move_size": {
+          "type": "score",
+          "instructions": "この銘柄の、この日の値動きの大きさ。",
+          "criteria": [
+            "ほとんど動いていない。",
+            "下落したが、小幅な下落にとどまる。",
+            "大幅に下落した。"
+          ]
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 448,
+        "output_tokens": 35
+      },
+      "answers": {
+        "big_drop": {
+          "type": "noul",
+          "noul": 0.48
+        },
+        "move_size": {
+          "type": "score",
+          "score": 1.13,
+          "confidence": 0.8,
+          "legend": {
+            "0": "ほとんど動いていない。",
+            "1": "下落したが、小幅な下落にとどまる。",
+            "2": "大幅に下落した。"
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.87,
+            "2": 0.13
+          }
+        }
+      },
+      "summary": {
+        "big_drop": "noul=0.480",
+        "move_size": "score=1.130 (conf=0.800)"
+      }
+    },
+    {
+      "id": "exp2_enoki_label",
+      "experiment": 4,
+      "title": "榎木商事：値動きのラベルだけを渡す（下落）",
+      "stock": "enoki_trading",
+      "condition": "label",
+      "prediction": "big_drop=0.5。下落だが大幅ではない、だが下落の中にも大幅な下落が含まれるため二択になるはず。move_size=1.5。big_dropと同じ理由。",
+      "state": {
+        "銘柄": {
+          "名前": "榎木商事",
+          "日付": "2026-07-31",
+          "値動き": "下落"
+        }
+      },
+      "questions": {
+        "big_drop": {
+          "type": "noul",
+          "instructions": "この銘柄は、この日に大幅な下落をした。"
+        },
+        "move_size": {
+          "type": "score",
+          "instructions": "この銘柄の、この日の値動きの大きさ。",
+          "criteria": [
+            "ほとんど動いていない。",
+            "下落したが、小幅な下落にとどまる。",
+            "大幅に下落した。"
+          ]
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 417,
+        "output_tokens": 35
+      },
+      "answers": {
+        "big_drop": {
+          "type": "noul",
+          "noul": 0.43
+        },
+        "move_size": {
+          "type": "score",
+          "score": 0.89,
+          "confidence": 0.75,
+          "legend": {
+            "0": "ほとんど動いていない。",
+            "1": "下落したが、小幅な下落にとどまる。",
+            "2": "大幅に下落した。"
+          },
+          "probabilities": {
+            "0": 0.14,
+            "1": 0.83,
+            "2": 0.03
+          }
+        }
+      },
+      "summary": {
+        "big_drop": "noul=0.430",
+        "move_size": "score=0.890 (conf=0.750)"
+      }
+    },
+    {
+      "id": "exp2_fujimi_raw",
+      "experiment": 2,
+      "title": "富士見運輸：前日比 -3.1% を生の数値で渡す",
+      "stock": "fujimi_logistics",
+      "condition": "raw",
+      "prediction": "big_drop=0.2。コードでは大幅下落になっているが一般的にはただの下落なため。move_size=1.5。exp2_enoki_rawと同じ理由だが、下落幅が大きくなった分少しだけ増えそう。",
+      "state": {
+        "銘柄": {
+          "名前": "富士見運輸",
+          "日付": "2026-07-31",
+          "前日終値": 724.98,
+          "終値": 702.51,
+          "前日比（%）": -3.1
+        }
+      },
+      "questions": {
+        "big_drop": {
+          "type": "noul",
+          "instructions": "この銘柄は、この日に大幅な下落をした。"
+        },
+        "move_size": {
+          "type": "score",
+          "instructions": "この銘柄の、この日の値動きの大きさ。",
+          "criteria": [
+            "ほとんど動いていない。",
+            "下落したが、小幅な下落にとどまる。",
+            "大幅に下落した。"
+          ]
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 446,
+        "output_tokens": 35
+      },
+      "answers": {
+        "big_drop": {
+          "type": "noul",
+          "noul": 0.47
+        },
+        "move_size": {
+          "type": "score",
+          "score": 1.08,
+          "confidence": 0.87,
+          "legend": {
+            "0": "ほとんど動いていない。",
+            "1": "下落したが、小幅な下落にとどまる。",
+            "2": "大幅に下落した。"
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.92,
+            "2": 0.08
+          }
+        }
+      },
+      "summary": {
+        "big_drop": "noul=0.470",
+        "move_size": "score=1.080 (conf=0.870)"
+      }
+    },
+    {
+      "id": "exp2_fujimi_label",
+      "experiment": 4,
+      "title": "富士見運輸：値動きのラベルだけを渡す（大幅下落）",
+      "stock": "fujimi_logistics",
+      "condition": "label",
+      "prediction": "big_drop=0.9。stateを文字通り受け取ると高くなる気がする。move_size=1.9。big_dropと同じ理由。exp2_enoki_labelと違い小幅の下落の可能性が消えたため2.0に近くなるとおもう。",
+      "state": {
+        "銘柄": {
+          "名前": "富士見運輸",
+          "日付": "2026-07-31",
+          "値動き": "大幅下落"
+        }
+      },
+      "questions": {
+        "big_drop": {
+          "type": "noul",
+          "instructions": "この銘柄は、この日に大幅な下落をした。"
+        },
+        "move_size": {
+          "type": "score",
+          "instructions": "この銘柄の、この日の値動きの大きさ。",
+          "criteria": [
+            "ほとんど動いていない。",
+            "下落したが、小幅な下落にとどまる。",
+            "大幅に下落した。"
+          ]
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 419,
+        "output_tokens": 35
+      },
+      "answers": {
+        "big_drop": {
+          "type": "noul",
+          "noul": 0.94
+        },
+        "move_size": {
+          "type": "score",
+          "score": 2.0,
+          "confidence": 1.0,
+          "legend": {
+            "0": "ほとんど動いていない。",
+            "1": "下落したが、小幅な下落にとどまる。",
+            "2": "大幅に下落した。"
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 1.0
+          }
+        }
+      },
+      "summary": {
+        "big_drop": "noul=0.940",
+        "move_size": "score=2.000 (conf=1.000)"
+      }
+    },
+    {
+      "id": "exp3_gyoda_shares",
+      "experiment": 3,
+      "title": "行田システム：出来高を株数で渡す",
+      "stock": "gyoda_systems",
+      "condition": "shares",
+      "prediction": "0.5。基準がわからない上に実在しない企業なので比べ用がないため真ん中。confidenceは限りなく低いはず",
+      "state": {
+        "銘柄": {
+          "名前": "行田システム",
+          "日付": "2026-07-31",
+          "出来高": "1,837,597株"
+        }
+      },
+      "questions": {
+        "volume_high": {
+          "type": "noul",
+          "instructions": "この銘柄のこの日の出来高は、普段と比べて目立って多い。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 351,
+        "output_tokens": 21
+      },
+      "answers": {
+        "volume_high": {
+          "type": "noul",
+          "noul": 0.44
+        }
+      },
+      "summary": {
+        "volume_high": "noul=0.440"
+      }
+    },
+    {
+      "id": "exp3_gyoda_ratio",
+      "experiment": 3,
+      "title": "行田システム：出来高を平均との比で渡す",
+      "stock": "gyoda_systems",
+      "condition": "ratio",
+      "prediction": "0.9。基準がある分高くなるはず。confidenceも高くなる（0.8あたり）",
+      "state": {
+        "銘柄": {
+          "名前": "行田システム",
+          "日付": "2026-07-31",
+          "出来高": "直近25日平均の3.1倍"
+        }
+      },
+      "questions": {
+        "volume_high": {
+          "type": "noul",
+          "instructions": "この銘柄のこの日の出来高は、普段と比べて目立って多い。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 353,
+        "output_tokens": 21
+      },
+      "answers": {
+        "volume_high": {
+          "type": "noul",
+          "noul": 0.96
+        }
+      },
+      "summary": {
+        "volume_high": "noul=0.960"
+      }
+    },
+    {
+      "id": "exp3_gyoda_label",
+      "experiment": 3,
+      "title": "行田システム：出来高をラベルで渡す（急増）",
+      "stock": "gyoda_systems",
+      "condition": "label",
+      "prediction": "0.9。exp3_gyoda_ratioとそんなに変わらない。ただ文字のため少し低くなるかも。",
+      "state": {
+        "銘柄": {
+          "名前": "行田システム",
+          "日付": "2026-07-31",
+          "出来高": "急増"
+        }
+      },
+      "questions": {
+        "volume_high": {
+          "type": "noul",
+          "instructions": "この銘柄のこの日の出来高は、普段と比べて目立って多い。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 343,
+        "output_tokens": 21
+      },
+      "answers": {
+        "volume_high": {
+          "type": "noul",
+          "noul": 0.93
+        }
+      },
+      "summary": {
+        "volume_high": "noul=0.930"
+      }
+    },
+    {
+      "id": "exp3_hakuba_shares",
+      "experiment": 3,
+      "title": "白馬製薬：出来高を株数で渡す",
+      "stock": "hakuba_pharma",
+      "condition": "shares",
+      "prediction": "0.5。exp3_gyoda_sharesと同じ。",
+      "state": {
+        "銘柄": {
+          "名前": "白馬製薬",
+          "日付": "2026-07-31",
+          "出来高": "923,824株"
+        }
+      },
+      "questions": {
+        "volume_high": {
+          "type": "noul",
+          "instructions": "この銘柄のこの日の出来高は、普段と比べて目立って多い。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 347,
+        "output_tokens": 21
+      },
+      "answers": {
+        "volume_high": {
+          "type": "noul",
+          "noul": 0.4
+        }
+      },
+      "summary": {
+        "volume_high": "noul=0.400"
+      }
+    },
+    {
+      "id": "exp3_hakuba_ratio",
+      "experiment": 3,
+      "title": "白馬製薬：出来高を平均との比で渡す",
+      "stock": "hakuba_pharma",
+      "condition": "ratio",
+      "prediction": "0.5。多くもないし少なくもないので。confidenceは高そう。",
+      "state": {
+        "銘柄": {
+          "名前": "白馬製薬",
+          "日付": "2026-07-31",
+          "出来高": "直近25日平均の1.01倍"
+        }
+      },
+      "questions": {
+        "volume_high": {
+          "type": "noul",
+          "instructions": "この銘柄のこの日の出来高は、普段と比べて目立って多い。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 352,
+        "output_tokens": 21
+      },
+      "answers": {
+        "volume_high": {
+          "type": "noul",
+          "noul": 0.12
+        }
+      },
+      "summary": {
+        "volume_high": "noul=0.120"
+      }
+    },
+    {
+      "id": "exp3_hakuba_label",
+      "experiment": 3,
+      "title": "白馬製薬：出来高をラベルで渡す（平均並み）",
+      "stock": "hakuba_pharma",
+      "condition": "label",
+      "prediction": "0.5。これもexp3_hakuba_ratioとそんなに変わらないか少し小さい。理由はexp3_gyoda_labelと同じ。",
+      "state": {
+        "銘柄": {
+          "名前": "白馬製薬",
+          "日付": "2026-07-31",
+          "出来高": "平均並み"
+        }
+      },
+      "questions": {
+        "volume_high": {
+          "type": "noul",
+          "instructions": "この銘柄のこの日の出来高は、普段と比べて目立って多い。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 343,
+        "output_tokens": 21
+      },
+      "answers": {
+        "volume_high": {
+          "type": "noul",
+          "noul": 0.07
+        }
+      },
+      "summary": {
+        "volume_high": "noul=0.070"
+      }
+    }
+  ]
+}
