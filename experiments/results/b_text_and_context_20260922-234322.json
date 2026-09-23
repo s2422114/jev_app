@@ -1,0 +1,392 @@
+{
+  "module": "b_text_and_context",
+  "run_at": "20260922-234322",
+  "model": "jev-1.13.0",
+  "total_usage": {
+    "input_tokens": 4170,
+    "output_tokens": 181
+  },
+  "records": [
+    {
+      "id": "exp5_comment_only",
+      "experiment": 5,
+      "title": "好決算のコメントだけを渡す（株価の情報なし）",
+      "stock": "aoi_foods",
+      "condition": "comment_only",
+      "prediction": "1.5。コメントは割と前向きだが通気据え置きが弱く捉えられる可能性はある",
+      "state": {
+        "銘柄": {
+          "名前": "蒼井フーズ",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "第2四半期は、売上高・営業利益ともに期初計画を上回って着地しました。主力の冷凍食品カテゴリーの販売が伸び、通期の見通しは据え置きます。"
+      },
+      "questions": {
+        "positivity": {
+          "type": "score",
+          "instructions": "`決算コメント` の内容がどれくらい前向きか。",
+          "criteria": [
+            "業績の悪化や先行きへの懸念が中心で、後ろ向きな内容。",
+            "良い材料と悪い材料が混ざっているか、どちらとも言えない内容。",
+            "業績の改善や計画の超過が中心で、前向きな内容。"
+          ]
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 508,
+        "output_tokens": 19
+      },
+      "answers": {
+        "positivity": {
+          "type": "score",
+          "score": 2.0,
+          "confidence": 1.0,
+          "legend": {
+            "0": "業績の悪化や先行きへの懸念が中心で、後ろ向きな内容。",
+            "1": "良い材料と悪い材料が混ざっているか、どちらとも言えない内容。",
+            "2": "業績の改善や計画の超過が中心で、前向きな内容。"
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 1.0
+          }
+        }
+      },
+      "summary": {
+        "positivity": "score=2.000 (conf=1.000)"
+      }
+    },
+    {
+      "id": "exp5_with_uptrend",
+      "experiment": 5,
+      "title": "同じコメント ＋ トレンド（上昇トレンド）",
+      "stock": "aoi_foods",
+      "condition": "with_trend",
+      "prediction": "1.5。コメントだけを参照してほしい。exp5_comment_onlyと同じ。",
+      "state": {
+        "銘柄": {
+          "名前": "蒼井フーズ",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "第2四半期は、売上高・営業利益ともに期初計画を上回って着地しました。主力の冷凍食品カテゴリーの販売が伸び、通期の見通しは据え置きます。",
+        "株価": {
+          "トレンド": "上昇トレンド"
+        }
+      },
+      "questions": {
+        "positivity": {
+          "type": "score",
+          "instructions": "`決算コメント` の内容がどれくらい前向きか。",
+          "criteria": [
+            "業績の悪化や先行きへの懸念が中心で、後ろ向きな内容。",
+            "良い材料と悪い材料が混ざっているか、どちらとも言えない内容。",
+            "業績の改善や計画の超過が中心で、前向きな内容。"
+          ]
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 532,
+        "output_tokens": 19
+      },
+      "answers": {
+        "positivity": {
+          "type": "score",
+          "score": 2.0,
+          "confidence": 1.0,
+          "legend": {
+            "0": "業績の悪化や先行きへの懸念が中心で、後ろ向きな内容。",
+            "1": "良い材料と悪い材料が混ざっているか、どちらとも言えない内容。",
+            "2": "業績の改善や計画の超過が中心で、前向きな内容。"
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 1.0
+          }
+        }
+      },
+      "summary": {
+        "positivity": "score=2.000 (conf=1.000)"
+      }
+    },
+    {
+      "id": "exp5_with_downtrend",
+      "experiment": 5,
+      "title": "同じコメント ＋ トレンド（下降トレンド）",
+      "stock": "beniya_electric",
+      "condition": "with_trend",
+      "prediction": "1.5。コメントだけを参照してほしい。exp5_comment_onlyと同じ。",
+      "state": {
+        "銘柄": {
+          "名前": "紅屋電機",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "第2四半期は、売上高・営業利益ともに期初計画を上回って着地しました。主力の冷凍食品カテゴリーの販売が伸び、通期の見通しは据え置きます。",
+        "株価": {
+          "トレンド": "下降トレンド"
+        }
+      },
+      "questions": {
+        "positivity": {
+          "type": "score",
+          "instructions": "`決算コメント` の内容がどれくらい前向きか。",
+          "criteria": [
+            "業績の悪化や先行きへの懸念が中心で、後ろ向きな内容。",
+            "良い材料と悪い材料が混ざっているか、どちらとも言えない内容。",
+            "業績の改善や計画の超過が中心で、前向きな内容。"
+          ]
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 529,
+        "output_tokens": 19
+      },
+      "answers": {
+        "positivity": {
+          "type": "score",
+          "score": 2.0,
+          "confidence": 0.99,
+          "legend": {
+            "0": "業績の悪化や先行きへの懸念が中心で、後ろ向きな内容。",
+            "1": "良い材料と悪い材料が混ざっているか、どちらとも言えない内容。",
+            "2": "業績の改善や計画の超過が中心で、前向きな内容。"
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 1.0
+          }
+        }
+      },
+      "summary": {
+        "positivity": "score=2.000 (conf=0.990)"
+      }
+    },
+    {
+      "id": "exp6_aoi_consistent",
+      "experiment": 6,
+      "title": "蒼井フーズ：好決算のコメント ＋ 上昇トレンド",
+      "stock": "aoi_foods",
+      "condition": "consistent",
+      "prediction": "0.97。やはり通気据え置きに引っ張られそう。",
+      "state": {
+        "銘柄": {
+          "名前": "蒼井フーズ",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "第2四半期は、売上高・営業利益ともに期初計画を上回って着地しました。主力の冷凍食品カテゴリーの販売が伸び、通期の見通しは据え置きます。",
+        "株価": {
+          "トレンド": "上昇トレンド"
+        }
+      },
+      "questions": {
+        "consistent": {
+          "type": "noul",
+          "instructions": "`決算コメント` の内容は、`株価.トレンド` が示す株価の動きと整合している。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 448,
+        "output_tokens": 20
+      },
+      "answers": {
+        "consistent": {
+          "type": "noul",
+          "noul": 0.89
+        }
+      },
+      "summary": {
+        "consistent": "noul=0.890"
+      }
+    },
+    {
+      "id": "exp6_beniya_conflict",
+      "experiment": 6,
+      "title": "紅屋電機：好決算のコメント ＋ 下降トレンド",
+      "stock": "beniya_electric",
+      "condition": "conflict",
+      "prediction": "0.03。今までの実験から言うと0に近くなると思う。",
+      "state": {
+        "銘柄": {
+          "名前": "紅屋電機",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "第2四半期は、売上高・営業利益ともに期初計画を上回って着地しました。主力の冷凍食品カテゴリーの販売が伸び、通期の見通しは据え置きます。",
+        "株価": {
+          "トレンド": "下降トレンド"
+        }
+      },
+      "questions": {
+        "consistent": {
+          "type": "noul",
+          "instructions": "`決算コメント` の内容は、`株価.トレンド` が示す株価の動きと整合している。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 445,
+        "output_tokens": 20
+      },
+      "answers": {
+        "consistent": {
+          "type": "noul",
+          "noul": 0.2
+        }
+      },
+      "summary": {
+        "consistent": "noul=0.200"
+      }
+    },
+    {
+      "id": "exp7_daiko_surged",
+      "experiment": 7,
+      "title": "大湖精機：好決算のコメント ＋ 発表前に急上昇していた",
+      "stock": "daiko_precision",
+      "condition": "surged",
+      "prediction": "0.1。織り込まれていないから決算内容がバレて上がったと考えるのが普通。",
+      "state": {
+        "銘柄": {
+          "名前": "大湖精機",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "第2四半期の営業利益は前年同期比で32%の増益となりました。新工場の稼働が寄与しており、受注残も高い水準を保っています。",
+        "株価": {
+          "発表前の動き": "発表前に急上昇していた"
+        }
+      },
+      "questions": {
+        "priced_in": {
+          "type": "noul",
+          "instructions": "`決算コメント` の内容は、`株価.発表前の動き` にすでに織り込まれている。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 446,
+        "output_tokens": 22
+      },
+      "answers": {
+        "priced_in": {
+          "type": "noul",
+          "noul": 0.46
+        }
+      },
+      "summary": {
+        "priced_in": "noul=0.460"
+      }
+    },
+    {
+      "id": "exp7_chidori_flat",
+      "experiment": 7,
+      "title": "千鳥化学：好決算のコメント ＋ 発表前はほぼ横ばいだった",
+      "stock": "chidori_chemical",
+      "condition": "flat",
+      "prediction": "0.9。織り込まれていると考えるのが普通だから。",
+      "state": {
+        "銘柄": {
+          "名前": "千鳥化学",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "第2四半期の営業利益は前年同期比で32%の増益となりました。新工場の稼働が寄与しており、受注残も高い水準を保っています。",
+        "株価": {
+          "発表前の動き": "発表前はほぼ横ばいだった"
+        }
+      },
+      "questions": {
+        "priced_in": {
+          "type": "noul",
+          "instructions": "`決算コメント` の内容は、`株価.発表前の動き` にすでに織り込まれている。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 446,
+        "output_tokens": 22
+      },
+      "answers": {
+        "priced_in": {
+          "type": "noul",
+          "noul": 0.19
+        }
+      },
+      "summary": {
+        "priced_in": "noul=0.190"
+      }
+    },
+    {
+      "id": "exp8_extraordinary",
+      "experiment": 8,
+      "title": "白馬製薬：特別利益による増益",
+      "stock": "hakuba_pharma",
+      "condition": "extraordinary",
+      "prediction": "0.9。普通に考えると二度同じことが起こる保証はないので一時的。",
+      "state": {
+        "銘柄": {
+          "名前": "白馬製薬",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "今期の最終利益は前年比で大幅な増益となりました。保有していた本社不動産の売却益を特別利益として計上したことによるものです。"
+      },
+      "questions": {
+        "temporary": {
+          "type": "noul",
+          "instructions": "`決算コメント` が説明している増益は、一時的な要因によるものである。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 410,
+        "output_tokens": 20
+      },
+      "answers": {
+        "temporary": {
+          "type": "noul",
+          "noul": 0.95
+        }
+      },
+      "summary": {
+        "temporary": "noul=0.950"
+      }
+    },
+    {
+      "id": "exp8_core_business",
+      "experiment": 8,
+      "title": "白馬製薬：本業の伸びによる増益",
+      "stock": "hakuba_pharma",
+      "condition": "core_business",
+      "prediction": "0.6。恒久的かと思えるが、一時的かもしれない含みも残すので真ん中近く。",
+      "state": {
+        "銘柄": {
+          "名前": "白馬製薬",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "今期の最終利益は前年比で大幅な増益となりました。主力製品の出荷数量が伸び、原価率の改善も進んだことによるものです。"
+      },
+      "questions": {
+        "temporary": {
+          "type": "noul",
+          "instructions": "`決算コメント` が説明している増益は、一時的な要因によるものである。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 406,
+        "output_tokens": 20
+      },
+      "answers": {
+        "temporary": {
+          "type": "noul",
+          "noul": 0.23
+        }
+      },
+      "summary": {
+        "temporary": "noul=0.230"
+      }
+    }
+  ]
+}

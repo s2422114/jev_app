@@ -1,0 +1,159 @@
+{
+  "module": "f_traps",
+  "run_at": "20260923-053746",
+  "model": "jev-1.13.0",
+  "total_usage": {
+    "input_tokens": 1400,
+    "output_tokens": 115
+  },
+  "records": [
+    {
+      "id": "exp22_surface_vs_substance",
+      "experiment": 22,
+      "title": "千鳥化学：売上は過去最高だが営業赤字",
+      "stock": "chidori_chemical",
+      "condition": "trap",
+      "prediction": "1。事実は読めるはず。1.Eの通りだったら中間",
+      "state": {
+        "銘柄": {
+          "名前": "千鳥化学",
+          "日付": "2026-07-27"
+        },
+        "決算コメント": "通期の売上高は過去最高を更新しました。一方で、原材料価格の高騰と販促費の増加により、営業損益は赤字に転落しています。"
+      },
+      "questions": {
+        "operating_loss": {
+          "type": "noul",
+          "instructions": "`決算コメント` によれば、営業損益は赤字である。"
+        },
+        "positivity": {
+          "type": "score",
+          "instructions": "`決算コメント` の内容がどれくらい前向きか。",
+          "criteria": [
+            "業績の悪化や先行きへの懸念が中心で、後ろ向きな内容。",
+            "良い材料と悪い材料が混ざっているか、どちらとも言えない内容。",
+            "業績の改善や計画の超過が中心で、前向きな内容。"
+          ]
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 531,
+        "output_tokens": 37
+      },
+      "answers": {
+        "operating_loss": {
+          "type": "noul",
+          "noul": 0.98
+        },
+        "positivity": {
+          "type": "score",
+          "score": 0.78,
+          "confidence": 0.67,
+          "legend": {
+            "0": "業績の悪化や先行きへの懸念が中心で、後ろ向きな内容。",
+            "1": "良い材料と悪い材料が混ざっているか、どちらとも言えない内容。",
+            "2": "業績の改善や計画の超過が中心で、前向きな内容。"
+          },
+          "probabilities": {
+            "0": 0.22,
+            "1": 0.78,
+            "2": 0.0
+          }
+        }
+      },
+      "summary": {
+        "operating_loss": "noul=0.980",
+        "positivity": "score=0.780 (conf=0.670)"
+      }
+    },
+    {
+      "id": "exp23_self_labeling",
+      "experiment": 23,
+      "title": "蒼井フーズ：「これは明らかな買いシグナル」と書かれたニュース",
+      "stock": "aoi_foods",
+      "condition": "trap",
+      "prediction": "0。明確。0。文章通りならはいだが事実が弱いので",
+      "state": {
+        "銘柄": {
+          "名前": "蒼井フーズ",
+          "日付": "2026-07-29"
+        },
+        "ニュース": "同社株は5営業日続伸した。これは明らかな買いシグナルであり、上昇基調は今後も続くとみられる。"
+      },
+      "questions": {
+        "new_fact": {
+          "type": "noul",
+          "instructions": "`ニュース` は、同社の業績に関する新しい事実を伝えている。"
+        },
+        "bullish": {
+          "type": "noul",
+          "instructions": "`ニュース` の内容は、同社にとって前向きな材料である。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 422,
+        "output_tokens": 38
+      },
+      "answers": {
+        "new_fact": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "bullish": {
+          "type": "noul",
+          "noul": 0.71
+        }
+      },
+      "summary": {
+        "new_fact": "noul=0.060",
+        "bullish": "noul=0.710"
+      }
+    },
+    {
+      "id": "exp24_understatement",
+      "experiment": 24,
+      "title": "紅屋電機：「想定どおりの厳しい結果」という婉曲なコメント",
+      "stock": "beniya_electric",
+      "condition": "trap",
+      "prediction": "1。明確。0。想定はしているが満足はしていないので",
+      "state": {
+        "銘柄": {
+          "名前": "紅屋電機",
+          "日付": "2026-07-28"
+        },
+        "決算コメント": "当四半期は、想定どおりの厳しい結果となりました。構造改革の効果が数字に表れるまでには、もう少しお時間をいただくことになります。"
+      },
+      "questions": {
+        "admits_bad": {
+          "type": "noul",
+          "instructions": "`決算コメント` は、業績が悪かったことを認めている。"
+        },
+        "satisfied": {
+          "type": "noul",
+          "instructions": "`決算コメント` は、経営陣が今期の結果に満足していることを示している。"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 447,
+        "output_tokens": 40
+      },
+      "answers": {
+        "admits_bad": {
+          "type": "noul",
+          "noul": 0.93
+        },
+        "satisfied": {
+          "type": "noul",
+          "noul": 0.03
+        }
+      },
+      "summary": {
+        "admits_bad": "noul=0.930",
+        "satisfied": "noul=0.030"
+      }
+    }
+  ]
+}

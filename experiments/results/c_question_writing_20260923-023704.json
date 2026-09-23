@@ -1,0 +1,667 @@
+{
+  "module": "c_question_writing",
+  "run_at": "20260923-023704",
+  "model": "jev-1.13.0",
+  "total_usage": {
+    "input_tokens": 6309,
+    "output_tokens": 551
+  },
+  "records": [
+    {
+      "id": "exp9_broad",
+      "experiment": 9,
+      "title": "広い問いを1つだけ投げる",
+      "stock": "daiko_precision",
+      "condition": "broad",
+      "prediction": "1.0。下がる要素がないから",
+      "state": {
+        "銘柄": {
+          "名前": "大湖精機",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "第2四半期の営業利益は前年同期比で32%の増益となりました。新工場の稼働が寄与しており、受注残も高い水準を保っています。",
+        "株価": {
+          "トレンド": "上昇トレンド",
+          "発表前の動き": "発表前に急上昇していた"
+        }
+      },
+      "questions": {
+        "broad": {
+          "type": "noul",
+          "instructions": "この銘柄はこの先上がりそうですか？"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 441,
+        "output_tokens": 21
+      },
+      "answers": {
+        "broad": {
+          "type": "noul",
+          "noul": 0.58
+        }
+      },
+      "summary": {
+        "broad": "noul=0.580"
+      }
+    },
+    {
+      "id": "exp9_decomposed",
+      "experiment": 9,
+      "title": "分解した3問を1リクエストで投げる",
+      "stock": "daiko_precision",
+      "condition": "decomposed",
+      "prediction": "0.9,0.3,0.8。bの実験とそれぞれは同じのため。",
+      "state": {
+        "銘柄": {
+          "名前": "大湖精機",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "第2四半期の営業利益は前年同期比で32%の増益となりました。新工場の稼働が寄与しており、受注残も高い水準を保っています。",
+        "株価": {
+          "トレンド": "上昇トレンド",
+          "発表前の動き": "発表前に急上昇していた"
+        }
+      },
+      "questions": {
+        "positive": {
+          "type": "noul",
+          "instructions": "`決算コメント`はポジティブですか？"
+        },
+        "temporary": {
+          "type": "noul",
+          "instructions": "`決算コメント`の増益は一時的なものですか？"
+        },
+        "priced_in": {
+          "type": "noul",
+          "instructions": "`決算コメント`の内容は、`株価.発表前の動き`にすでに反映されていますか？"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 515,
+        "output_tokens": 54
+      },
+      "answers": {
+        "positive": {
+          "type": "noul",
+          "noul": 0.98
+        },
+        "temporary": {
+          "type": "noul",
+          "noul": 0.28
+        },
+        "priced_in": {
+          "type": "noul",
+          "noul": 0.39
+        }
+      },
+      "summary": {
+        "positive": "noul=0.980",
+        "temporary": "noul=0.280",
+        "priced_in": "noul=0.390"
+      }
+    },
+    {
+      "id": "exp10_without_criteria",
+      "experiment": 10,
+      "title": "criteria なしで聞く",
+      "stock": "chidori_chemical",
+      "condition": "without_criteria",
+      "prediction": "0.5。どちらを重視するのかわからないので真ん中",
+      "state": {
+        "銘柄": {
+          "名前": "千鳥化学",
+          "日付": "2026-07-27"
+        },
+        "決算コメント": "通期の売上高は過去最高を更新しました。一方で、原材料価格の高騰と販促費の増加により、営業損益は赤字に転落しています。"
+      },
+      "questions": {
+        "judgement": {
+          "type": "noul",
+          "instructions": "`決算コメント`はポジティブですか？"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 392,
+        "output_tokens": 22
+      },
+      "answers": {
+        "judgement": {
+          "type": "noul",
+          "noul": 0.19
+        }
+      },
+      "summary": {
+        "judgement": "noul=0.190"
+      }
+    },
+    {
+      "id": "exp10_with_criteria",
+      "experiment": 10,
+      "title": "同じ質問に criteria を付けて聞く",
+      "stock": "chidori_chemical",
+      "condition": "with_criteria",
+      "prediction": "0.1。criteriaでfalseになるようになってるから",
+      "state": {
+        "銘柄": {
+          "名前": "千鳥化学",
+          "日付": "2026-07-27"
+        },
+        "決算コメント": "通期の売上高は過去最高を更新しました。一方で、原材料価格の高騰と販促費の増加により、営業損益は赤字に転落しています。"
+      },
+      "questions": {
+        "judgement": {
+          "type": "noul",
+          "instructions": "`決算コメント`はポジティブですか？",
+          "criteria": {
+            "true": "本業の利益が伸びている場合",
+            "false": "営業損益が赤字、または減益の場合。売上高が過去最高でも、赤字ならこちら"
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 457,
+        "output_tokens": 22
+      },
+      "answers": {
+        "judgement": {
+          "type": "noul",
+          "noul": 0.06
+        }
+      },
+      "summary": {
+        "judgement": "noul=0.060"
+      }
+    },
+    {
+      "id": "exp11_vague",
+      "experiment": 11,
+      "title": "曖昧な語で聞く",
+      "stock": "enoki_trading",
+      "condition": "vague",
+      "prediction": "0.4。営業利益を重視しそうだから",
+      "state": {
+        "銘柄": {
+          "名前": "榎木商事",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "当第2四半期の売上高は前年同期比6.2%増となりましたが、仕入価格の上昇を販売価格に転嫁しきれず、営業利益は同4.8%減となりました。通期予想は据え置きます。"
+      },
+      "questions": {
+        "judgement": {
+          "type": "noul",
+          "instructions": "`決算コメント`から読み取れる企業の調子は良いか"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 419,
+        "output_tokens": 22
+      },
+      "answers": {
+        "judgement": {
+          "type": "noul",
+          "noul": 0.35
+        }
+      },
+      "summary": {
+        "judgement": "noul=0.350"
+      }
+    },
+    {
+      "id": "exp11_specific",
+      "experiment": 11,
+      "title": "具体的な語で聞く",
+      "stock": "enoki_trading",
+      "condition": "specific",
+      "prediction": "1.0。stateに書いてあるから",
+      "state": {
+        "銘柄": {
+          "名前": "榎木商事",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "当第2四半期の売上高は前年同期比6.2%増となりましたが、仕入価格の上昇を販売価格に転嫁しきれず、営業利益は同4.8%減となりました。通期予想は据え置きます。"
+      },
+      "questions": {
+        "judgement": {
+          "type": "noul",
+          "instructions": "`決算コメント`によると、売上は増収か"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 414,
+        "output_tokens": 22
+      },
+      "answers": {
+        "judgement": {
+          "type": "noul",
+          "noul": 0.98
+        }
+      },
+      "summary": {
+        "judgement": "noul=0.980"
+      }
+    },
+    {
+      "id": "exp12_negation",
+      "experiment": 12,
+      "title": "肯定形と否定形を同時に聞く",
+      "stock": "aoi_foods",
+      "condition": "both",
+      "prediction": "0.7。割と前向きなニュースだから",
+      "state": {
+        "銘柄": {
+          "名前": "蒼井フーズ",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "第2四半期は、売上高・営業利益ともに期初計画を上回って着地しました。主力の冷凍食品カテゴリーの販売が伸び、通期の見通しは据え置きます。"
+      },
+      "questions": {
+        "positive": {
+          "type": "noul",
+          "instructions": "`決算コメント`はポジティブか"
+        },
+        "negative": {
+          "type": "noul",
+          "instructions": "`決算コメント`はネガティブか"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 421,
+        "output_tokens": 36
+      },
+      "answers": {
+        "positive": {
+          "type": "noul",
+          "noul": 0.95
+        },
+        "negative": {
+          "type": "noul",
+          "noul": 0.03
+        }
+      },
+      "summary": {
+        "positive": "noul=0.950",
+        "negative": "noul=0.030"
+      }
+    },
+    {
+      "id": "exp13_noul",
+      "experiment": 13,
+      "title": "Noul で聞く",
+      "stock": "aoi_foods",
+      "condition": "noul",
+      "prediction": "0.9。前向き以外読み取れないので",
+      "state": {
+        "銘柄": {
+          "名前": "蒼井フーズ",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "第2四半期は、売上高・営業利益ともに期初計画を上回って着地しました。主力の冷凍食品カテゴリーの販売が伸び、通期の見通しは据え置きます。"
+      },
+      "questions": {
+        "judgement": {
+          "type": "noul",
+          "instructions": "`決算コメント`は前向きか"
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 397,
+        "output_tokens": 22
+      },
+      "answers": {
+        "judgement": {
+          "type": "noul",
+          "noul": 0.94
+        }
+      },
+      "summary": {
+        "judgement": "noul=0.940"
+      }
+    },
+    {
+      "id": "exp13_choice",
+      "experiment": 13,
+      "title": "同じことを Choice で聞く",
+      "stock": "aoi_foods",
+      "condition": "choice",
+      "prediction": "0.9。choiceにしたところで変わらない気がする",
+      "state": {
+        "銘柄": {
+          "名前": "蒼井フーズ",
+          "日付": "2026-07-20"
+        },
+        "決算コメント": "第2四半期は、売上高・営業利益ともに期初計画を上回って着地しました。主力の冷凍食品カテゴリーの販売が伸び、通期の見通しは据え置きます。"
+      },
+      "questions": {
+        "judgement": {
+          "type": "choice",
+          "instructions": "`決算コメント`は前向きか",
+          "criteria": {
+            "はい": null,
+            "いいえ": null
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 415,
+        "output_tokens": 35
+      },
+      "answers": {
+        "judgement": {
+          "type": "choice",
+          "choice": "はい",
+          "confidence": 1.0,
+          "probabilities": {
+            "はい": 1.0,
+            "いいえ": 0.0
+          }
+        }
+      },
+      "summary": {
+        "judgement": "choice=はい (conf=1.000)"
+      }
+    },
+    {
+      "id": "exp14_choice",
+      "experiment": 14,
+      "title": "3段階を Choice で聞く",
+      "stock": "beniya_electric",
+      "condition": "choice",
+      "prediction": "0.5。ほとんど悲観的だが具体的な対策を言わない点で少し楽観も入ってると思う",
+      "state": {
+        "銘柄": {
+          "名前": "紅屋電機",
+          "日付": "2026-07-28"
+        },
+        "決算コメント": "当四半期は、想定どおりの厳しい結果となりました。構造改革の効果が数字に表れるまでには、もう少しお時間をいただくことになります。"
+      },
+      "questions": {
+        "judgement": {
+          "type": "choice",
+          "instructions": "`決算コメント`はどの立場にあるか",
+          "criteria": {
+            "悲観的": null,
+            "中立": null,
+            "楽観的": null
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 422,
+        "output_tokens": 47
+      },
+      "answers": {
+        "judgement": {
+          "type": "choice",
+          "choice": "悲観的",
+          "confidence": 0.96,
+          "probabilities": {
+            "悲観的": 0.97,
+            "楽観的": 0.0,
+            "中立": 0.03
+          }
+        }
+      },
+      "summary": {
+        "judgement": "choice=悲観的 (conf=0.960)"
+      }
+    },
+    {
+      "id": "exp14_score",
+      "experiment": 14,
+      "title": "同じ3段階を Score で聞く",
+      "stock": "beniya_electric",
+      "condition": "score",
+      "prediction": "0。楽観要素はあるが一般的には悲観",
+      "state": {
+        "銘柄": {
+          "名前": "紅屋電機",
+          "日付": "2026-07-28"
+        },
+        "決算コメント": "当四半期は、想定どおりの厳しい結果となりました。構造改革の効果が数字に表れるまでには、もう少しお時間をいただくことになります。"
+      },
+      "questions": {
+        "judgement": {
+          "type": "score",
+          "instructions": "`決算コメント`はどの立場にあるか",
+          "criteria": [
+            "悲観的",
+            "中立",
+            "楽観的"
+          ]
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 424,
+        "output_tokens": 19
+      },
+      "answers": {
+        "judgement": {
+          "type": "score",
+          "score": 0.08,
+          "confidence": 0.88,
+          "legend": {
+            "0": "悲観的",
+            "1": "中立",
+            "2": "楽観的"
+          },
+          "probabilities": {
+            "0": 0.93,
+            "1": 0.07,
+            "2": 0.0
+          }
+        }
+      },
+      "summary": {
+        "judgement": "score=0.080 (conf=0.880)"
+      }
+    },
+    {
+      "id": "exp15_ma_without_none",
+      "experiment": 15,
+      "title": "M&A のニュース：該当なしを入れない",
+      "stock": "gyoda_systems",
+      "condition": "without_none",
+      "prediction": "1。これは明白",
+      "state": {
+        "銘柄": {
+          "名前": "行田システム",
+          "日付": "2026-07-22"
+        },
+        "ニュース": "同社は、産業用センサーを手がける企業を完全子会社化すると発表した。"
+      },
+      "questions": {
+        "category": {
+          "type": "choice",
+          "instructions": "`ニュース`はなんの話か",
+          "criteria": {
+            "業績": null,
+            "M&A": null,
+            "不祥事": null,
+            "人事": null
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 389,
+        "output_tokens": 51
+      },
+      "answers": {
+        "category": {
+          "type": "choice",
+          "choice": "M&A",
+          "confidence": 1.0,
+          "probabilities": {
+            "不祥事": 0.0,
+            "人事": 0.0,
+            "業績": 0.0,
+            "M&A": 1.0
+          }
+        }
+      },
+      "summary": {
+        "category": "choice=M&A (conf=1.000)"
+      }
+    },
+    {
+      "id": "exp15_ma_with_none",
+      "experiment": 15,
+      "title": "M&A のニュース：該当なしを入れる",
+      "stock": "gyoda_systems",
+      "condition": "with_none",
+      "prediction": "1。流石に変わらない",
+      "state": {
+        "銘柄": {
+          "名前": "行田システム",
+          "日付": "2026-07-22"
+        },
+        "ニュース": "同社は、産業用センサーを手がける企業を完全子会社化すると発表した。"
+      },
+      "questions": {
+        "category": {
+          "type": "choice",
+          "instructions": "`ニュース`はなんの話か",
+          "criteria": {
+            "業績": null,
+            "M&A": null,
+            "不祥事": null,
+            "人事": null,
+            "該当なし": null
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 399,
+        "output_tokens": 62
+      },
+      "answers": {
+        "category": {
+          "type": "choice",
+          "choice": "M&A",
+          "confidence": 1.0,
+          "probabilities": {
+            "人事": 0.0,
+            "不祥事": 0.0,
+            "該当なし": 0.0,
+            "M&A": 1.0,
+            "業績": 0.0
+          }
+        }
+      },
+      "summary": {
+        "category": "choice=M&A (conf=1.000)"
+      }
+    },
+    {
+      "id": "exp15_office_without_none",
+      "experiment": 15,
+      "title": "どの分類にも当てはまらないニュース：該当なしを入れない",
+      "stock": "gyoda_systems",
+      "condition": "without_none",
+      "prediction": "0。業績とは関係ないが結びつけてくるかもしれない",
+      "state": {
+        "銘柄": {
+          "名前": "行田システム",
+          "日付": "2026-07-27"
+        },
+        "ニュース": "同社は、本社オフィスの移転先が決まったと発表した。新住所での営業は来月から始まる。"
+      },
+      "questions": {
+        "category": {
+          "type": "choice",
+          "instructions": "`ニュース`はなんの話か",
+          "criteria": {
+            "業績": null,
+            "M&A": null,
+            "不祥事": null,
+            "人事": null
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 397,
+        "output_tokens": 51
+      },
+      "answers": {
+        "category": {
+          "type": "choice",
+          "choice": "人事",
+          "confidence": 0.63,
+          "probabilities": {
+            "M&A": 0.02,
+            "人事": 0.73,
+            "業績": 0.23,
+            "不祥事": 0.02
+          }
+        }
+      },
+      "summary": {
+        "category": "choice=人事 (conf=0.630)"
+      }
+    },
+    {
+      "id": "exp15_office_with_none",
+      "experiment": 15,
+      "title": "どの分類にも当てはまらないニュース：該当なしを入れる",
+      "stock": "gyoda_systems",
+      "condition": "with_none",
+      "prediction": "4。選択肢にないので該当なし",
+      "state": {
+        "銘柄": {
+          "名前": "行田システム",
+          "日付": "2026-07-27"
+        },
+        "ニュース": "同社は、本社オフィスの移転先が決まったと発表した。新住所での営業は来月から始まる。"
+      },
+      "questions": {
+        "category": {
+          "type": "choice",
+          "instructions": "`ニュース`はなんの話か",
+          "criteria": {
+            "業績": null,
+            "M&A": null,
+            "不祥事": null,
+            "人事": null,
+            "該当なし": null
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 407,
+        "output_tokens": 65
+      },
+      "answers": {
+        "category": {
+          "type": "choice",
+          "choice": "該当なし",
+          "confidence": 1.0,
+          "probabilities": {
+            "人事": 0.0,
+            "不祥事": 0.0,
+            "該当なし": 1.0,
+            "M&A": 0.0,
+            "業績": 0.0
+          }
+        }
+      },
+      "summary": {
+        "category": "choice=該当なし (conf=1.000)"
+      }
+    }
+  ]
+}
