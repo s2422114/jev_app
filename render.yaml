@@ -1,0 +1,31 @@
+# Render の Blueprint。ここに書いた内容で Web サービスと静的サイトが作られる。
+# 書式は https://render.com/docs/blueprint-spec に従っている。
+
+services:
+  # ---- backend（FastAPI）: Web サービス ----
+  - type: web
+    name: jev-backend
+    runtime: python
+    plan: free # 省略すると有料の 0.5c-512mb になるので明示する
+    rootDir: backend # このフォルダに uv.lock があるので Render が uv を使う
+    buildCommand: uv sync
+    startCommand: uv run uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      # sync: false は「値はリポジトリに書かず、Render の画面で入れる」の意味。
+      # API キーをコミットしないための指定。
+      - key: TYPESAFE_API_KEY
+        sync: false
+
+  # ---- frontend（Vite + React）: 静的サイト ----
+  - type: web
+    runtime: static
+    name: jev-frontend
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    routes:
+      # /api/* を backend へ転送する。これで同一ドメインになり、CORS の設定が要らない。
+      # destination のホスト名は、backend を作ったあとに実際の URL に合わせて直す。
+      - type: rewrite
+        source: /api/*
+        destination: https://jev-backend.onrender.com/api/*
