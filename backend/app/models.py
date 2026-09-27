@@ -46,3 +46,56 @@ class JudgeResult(BaseModel):
 
     listed: bool
     """翌日の売買リストに入れるか。門・confidence・スコアの閾値をすべて通った場合だけ true。"""
+
+
+class MaterialSummary(BaseModel):
+    """材料の一覧に出す情報。本文は含めない。"""
+
+    no: int
+    title: str
+    style: str
+    """文体の種類。同じ事実でも文体で評価が動くため、比較できるように残している。"""
+    criteria_flag: str
+    """market_moving の criteria に例として明記されている種類かどうか。"""
+    aim: str
+    """この材料で何を見たかったか。"""
+    listed: bool
+    """判定の結果（リストに入れるか）。一覧で見分けられるように入れる。"""
+
+    values: dict[str, float]
+    """7問の値（0〜1）。一覧で16件を横に比べられるように含める。"""
+
+    score: float | None = None
+    """合成スコア。門か confidence で落ちた場合は None。"""
+
+    blocked_by: list[str]
+    """落ちた門。一覧では色を付けないが、並べ替えや説明に使えるように返す。"""
+
+
+class DemoJudgement(BaseModel):
+    """材料1件の判定。値は実測（毎回 Jev を呼ぶのではなく、測った結果を配る）。"""
+
+    no: int
+    title: str
+    aim: str
+    style: str
+    criteria_flag: str
+    note: str | None = None
+    """比較の軸がずれているなど、結果を読むときの注意。"""
+    has_expectation: bool
+    """事前の予想が state に入っているか。空のとき above_expectation は 0.5 付近になる。"""
+    result: JudgeResult
+    runs: list[dict]
+    """同じ材料を複数回投げた場合の全回。ぶれの幅を見るため。"""
+
+
+class Settings(BaseModel):
+    """判定に使った閾値と重み。画面で閾値の位置を示すために返す。"""
+
+    gate_thresholds: dict[str, float]
+    min_confidence: float
+    weights: dict[str, float]
+    score_threshold: float
+    measured_at: str
+    """この判定を実測した日時。"""
+    model: str

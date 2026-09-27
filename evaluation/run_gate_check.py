@@ -36,7 +36,7 @@ from app.questions import (  # noqa: E402
 )
 from gate_materials import MATERIALS, PREDICTIONS  # noqa: E402
 
-RESULTS_DIR = Path(__file__).with_name("results")
+RESULTS_DIR = Path(__file__).with_name("demo_results")  # 架空の材料なのでコミットする
 SLEEP_SECONDS = 0.5  # 連続で叩かないための間隔
 
 

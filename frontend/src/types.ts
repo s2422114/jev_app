@@ -1,6 +1,5 @@
 // backend の Pydantic モデル（backend/app/models.py）と同じ形を宣言する。
 // 自動生成ではないので、片方を変えたらもう片方も直すこと。
-// 形がずれていれば、ここを手がかりに気づける。
 
 /** Jev の1問ぶんの答え。 */
 export type Answer = {
@@ -14,16 +13,63 @@ export type Answer = {
 
 /** 材料1件に対する判断の結果。 */
 export type JudgeResult = {
-  /** 判断の対象にした材料。 */
   material: unknown
-  /** 7問すべての答え。キーは "new_info" などの質問キー。 */
   answers: Record<string, Answer>
-  /** 門で落ちた質問のキー。空なら門は通過。 */
   blocked_by: string[]
-  /** confidence が下限を下回った質問のキー（Score の3問が対象）。 */
   low_confidence: string[]
-  /** 合成したスコア（0〜1）。門か confidence で落ちた場合は null。 */
   score: number | null
-  /** 翌日の売買リストに入れるか。 */
   listed: boolean
+}
+
+/** 材料の一覧に出す情報。本文は含まない。 */
+export type MaterialSummary = {
+  no: number
+  title: string
+  style: string
+  criteria_flag: string
+  aim: string
+  listed: boolean
+  /** 7問の値（0〜1）。一覧で16件を横に比べるために含む。 */
+  values: Record<string, number>
+  score: number | null
+  blocked_by: string[]
+}
+
+/** 同じ材料を複数回投げたときの1回分。 */
+export type Run = {
+  run: number
+  answers: Record<string, number>
+  blocked_by: string[]
+  low_confidence: string[]
+  score: number | null
+}
+
+/** 材料1件と、その判定（実測値）。 */
+export type DemoJudgement = {
+  no: number
+  title: string
+  aim: string
+  style: string
+  criteria_flag: string
+  note: string | null
+  has_expectation: boolean
+  result: JudgeResult
+  runs: Run[]
+}
+
+/** 材料の state（Jev に渡したもの）。 */
+export type MaterialState = {
+  銘柄: { 名前: string; コード: string }
+  ニュース: { 日付: string; 本文: string }
+  事前の予想: { 会社予想: string }
+}
+
+/** 判定に使った閾値と重み。 */
+export type Settings = {
+  gate_thresholds: Record<string, number>
+  min_confidence: number
+  weights: Record<string, number>
+  score_threshold: number
+  measured_at: string
+  model: string
 }

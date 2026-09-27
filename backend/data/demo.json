@@ -1,0 +1,1713 @@
+{
+  "source": "evaluation/results/gate_check_20260928-040027.json",
+  "measured_at": "20260928-040027",
+  "model": "jev-1.13.0",
+  "settings": {
+    "gate_thresholds": {
+      "new_info": 0.6,
+      "market_moving": 0.6,
+      "official_announcement": 0.6,
+      "direction": 0.6
+    },
+    "min_confidence": 0.7,
+    "score_keys": [
+      "direction",
+      "above_expectation",
+      "magnitude"
+    ],
+    "weights": {
+      "above_expectation": 0.4,
+      "magnitude": 0.35,
+      "continuing": 0.25
+    },
+    "score_threshold": 0.6
+  },
+  "materials": [
+    {
+      "no": 1,
+      "title": "通期業績予想の上方修正（蒼井フーズ）",
+      "aim": "通る（基準）",
+      "style": "淡々とした開示文調",
+      "criteria_flag": "明記あり（true 側：業績の上方修正）",
+      "note": null,
+      "has_expectation": true,
+      "state": {
+        "銘柄": {
+          "名前": "蒼井フーズ",
+          "コード": "9001"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "当社は、最近の業績動向を踏まえ、2027年3月期の通期連結業績予想を下記のとおり修正いたします。売上高は1,480億円（従来予想1,400億円）、営業利益は120億円（同95億円）を見込んでおります。主力の冷凍食品部門において、値上げ後も販売数量が堅調に推移したことに加え、原材料価格が想定を下回って推移したことによるものです。"
+        },
+        "事前の予想": {
+          "会社予想": "2027年3月期 連結営業利益 95億円（前期比 1%増）"
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.92,
+            "normalized": 0.92,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.98,
+            "normalized": 0.98,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.83,
+            "normalized": 0.83,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 2.0,
+            "normalized": 1.0,
+            "confidence": 1.0
+          },
+          "above_expectation": {
+            "raw": 2.0,
+            "normalized": 1.0,
+            "confidence": 1.0
+          },
+          "magnitude": {
+            "raw": 1.87,
+            "normalized": 0.935,
+            "confidence": 0.81
+          },
+          "continuing": {
+            "raw": 0.52,
+            "normalized": 0.52,
+            "confidence": null
+          }
+        },
+        "blocked_by": [],
+        "low_confidence": [],
+        "score": 0.8572500000000001,
+        "listed": true
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.92,
+            "market_moving": 0.98,
+            "official_announcement": 0.83,
+            "direction": 1.0,
+            "above_expectation": 1.0,
+            "magnitude": 0.935,
+            "continuing": 0.52
+          },
+          "blocked_by": [],
+          "low_confidence": [],
+          "score": 0.8572500000000001
+        }
+      ]
+    },
+    {
+      "no": 2,
+      "title": "自己株式の取得（大湖精機）",
+      "aim": "事前の予想が空のときの挙動を見る",
+      "style": "定型の開示文",
+      "criteria_flag": "明記あり（true 側：自社株買い）",
+      "note": null,
+      "has_expectation": false,
+      "state": {
+        "銘柄": {
+          "名前": "大湖精機",
+          "コード": "9004"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "当社は、本日開催の取締役会において、会社法第165条第3項の規定により読み替えて適用される同法第156条の規定に基づき、自己株式を取得することを決議しました。取得し得る株式の総数は150万株（発行済株式総数（自己株式を除く）に対する割合3.2%）、取得価額の総額は45億円を上限とし、取得期間は2026年10月1日から2027年3月31日までとします。資本効率の向上および株主還元の充実を図ることを目的としております。"
+        },
+        "事前の予想": {
+          "会社予想": ""
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.84,
+            "normalized": 0.84,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.87,
+            "normalized": 0.87,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.89,
+            "normalized": 0.89,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 1.91,
+            "normalized": 0.955,
+            "confidence": 0.86
+          },
+          "above_expectation": {
+            "raw": 1.12,
+            "normalized": 0.56,
+            "confidence": 0.75
+          },
+          "magnitude": {
+            "raw": 0.57,
+            "normalized": 0.285,
+            "confidence": 0.15
+          },
+          "continuing": {
+            "raw": 0.56,
+            "normalized": 0.56,
+            "confidence": null
+          }
+        },
+        "blocked_by": [],
+        "low_confidence": [
+          "magnitude"
+        ],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.84,
+            "market_moving": 0.87,
+            "official_announcement": 0.89,
+            "direction": 0.955,
+            "above_expectation": 0.56,
+            "magnitude": 0.285,
+            "continuing": 0.56
+          },
+          "blocked_by": [],
+          "low_confidence": [
+            "magnitude"
+          ],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 3,
+      "title": "既報の内容の再掲（千鳥化学）",
+      "aim": "new_info が落とす",
+      "style": "簡潔",
+      "criteria_flag": "明記あり（false 側：既報の焼き直し）",
+      "note": null,
+      "has_expectation": false,
+      "state": {
+        "銘柄": {
+          "名前": "千鳥化学",
+          "コード": "9003"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "先日お知らせいたしました新生産設備の稼働開始につきまして、改めてご案内いたします。内容は2026年9月10日付の開示から変更ございません。詳細は当社ウェブサイトに掲載の資料をご参照ください。"
+        },
+        "事前の予想": {
+          "会社予想": ""
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.15,
+            "normalized": 0.15,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.19,
+            "normalized": 0.19,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.84,
+            "normalized": 0.84,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 1.3,
+            "normalized": 0.65,
+            "confidence": 0.5
+          },
+          "above_expectation": {
+            "raw": 1.0,
+            "normalized": 0.5,
+            "confidence": 0.98
+          },
+          "magnitude": {
+            "raw": 0.33,
+            "normalized": 0.165,
+            "confidence": 0.51
+          },
+          "continuing": {
+            "raw": 0.47,
+            "normalized": 0.47,
+            "confidence": null
+          }
+        },
+        "blocked_by": [
+          "new_info",
+          "market_moving"
+        ],
+        "low_confidence": [
+          "direction",
+          "magnitude"
+        ],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.15,
+            "market_moving": 0.19,
+            "official_announcement": 0.84,
+            "direction": 0.65,
+            "above_expectation": 0.5,
+            "magnitude": 0.165,
+            "continuing": 0.47
+          },
+          "blocked_by": [
+            "new_info",
+            "market_moving"
+          ],
+          "low_confidence": [
+            "direction",
+            "magnitude"
+          ],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 4,
+      "title": "本社移転のお知らせ（榎木商事）",
+      "aim": "market_moving が落とす",
+      "style": "簡潔",
+      "criteria_flag": "明記あり（false 側：本社移転）",
+      "note": null,
+      "has_expectation": false,
+      "state": {
+        "銘柄": {
+          "名前": "榎木商事",
+          "コード": "9005"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "当社は、業務効率の向上を目的として本社事務所を移転することといたしました。新住所での業務開始は2026年11月4日を予定しております。電話番号およびFAX番号に変更はございません。"
+        },
+        "事前の予想": {
+          "会社予想": ""
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.85,
+            "normalized": 0.85,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.05,
+            "normalized": 0.05,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.86,
+            "normalized": 0.86,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 1.07,
+            "normalized": 0.535,
+            "confidence": 0.88
+          },
+          "above_expectation": {
+            "raw": 1.0,
+            "normalized": 0.5,
+            "confidence": 0.95
+          },
+          "magnitude": {
+            "raw": 0.01,
+            "normalized": 0.005,
+            "confidence": 0.99
+          },
+          "continuing": {
+            "raw": 0.33,
+            "normalized": 0.33,
+            "confidence": null
+          }
+        },
+        "blocked_by": [
+          "market_moving",
+          "direction"
+        ],
+        "low_confidence": [],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.85,
+            "market_moving": 0.05,
+            "official_announcement": 0.86,
+            "direction": 0.535,
+            "above_expectation": 0.5,
+            "magnitude": 0.005,
+            "continuing": 0.33
+          },
+          "blocked_by": [
+            "market_moving",
+            "direction"
+          ],
+          "low_confidence": [],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 5,
+      "title": "代表取締役の異動（紅屋電機）",
+      "aim": "market_moving が落とす",
+      "style": "定型の開示文",
+      "criteria_flag": "明記あり（false 側：人事異動）",
+      "note": null,
+      "has_expectation": false,
+      "state": {
+        "銘柄": {
+          "名前": "紅屋電機",
+          "コード": "9002"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "当社は、本日開催の取締役会において、代表取締役の異動について下記のとおり決議いたしましたので、お知らせいたします。新代表取締役社長には現・取締役専務執行役員が就任し、現・代表取締役社長は取締役会長に就任いたします。就任予定日は2027年4月1日です。"
+        },
+        "事前の予想": {
+          "会社予想": ""
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.83,
+            "normalized": 0.83,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.06,
+            "normalized": 0.06,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.9,
+            "normalized": 0.9,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 1.02,
+            "normalized": 0.51,
+            "confidence": 0.92
+          },
+          "above_expectation": {
+            "raw": 0.99,
+            "normalized": 0.495,
+            "confidence": 0.95
+          },
+          "magnitude": {
+            "raw": 0.25,
+            "normalized": 0.125,
+            "confidence": 0.62
+          },
+          "continuing": {
+            "raw": 0.47,
+            "normalized": 0.47,
+            "confidence": null
+          }
+        },
+        "blocked_by": [
+          "market_moving",
+          "direction"
+        ],
+        "low_confidence": [
+          "magnitude"
+        ],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.83,
+            "market_moving": 0.06,
+            "official_announcement": 0.9,
+            "direction": 0.51,
+            "above_expectation": 0.495,
+            "magnitude": 0.125,
+            "continuing": 0.47
+          },
+          "blocked_by": [
+            "market_moving",
+            "direction"
+          ],
+          "low_confidence": [
+            "magnitude"
+          ],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 6,
+      "title": "アナリストによる分析記事（蒼井フーズ）",
+      "aim": "official_announcement が落とす（new_info も同時に落ちうる。狙った門は複数）",
+      "style": "記事調",
+      "criteria_flag": "明記あり（false 側：アナリストの分析記事）",
+      "note": null,
+      "has_expectation": false,
+      "state": {
+        "銘柄": {
+          "名前": "蒼井フーズ",
+          "コード": "9001"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "みどり証券のアナリストは28日、蒼井フーズのレーティングを「中立」から「強気」に引き上げ、目標株価を1,600円（従来1,250円）とした。冷凍食品の値上げ浸透が想定より速く、来期にかけて営業利益率の改善が続くとみている。同アナリストは「市場はまだ採算改善の持続性を織り込んでいない」と指摘した。"
+        },
+        "事前の予想": {
+          "会社予想": ""
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.89,
+            "normalized": 0.89,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.25,
+            "normalized": 0.25,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.07,
+            "normalized": 0.07,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 2.0,
+            "normalized": 1.0,
+            "confidence": 1.0
+          },
+          "above_expectation": {
+            "raw": 1.86,
+            "normalized": 0.93,
+            "confidence": 0.79
+          },
+          "magnitude": {
+            "raw": 1.49,
+            "normalized": 0.745,
+            "confidence": 0.24
+          },
+          "continuing": {
+            "raw": 0.64,
+            "normalized": 0.64,
+            "confidence": null
+          }
+        },
+        "blocked_by": [
+          "market_moving",
+          "official_announcement"
+        ],
+        "low_confidence": [
+          "magnitude"
+        ],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.89,
+            "market_moving": 0.25,
+            "official_announcement": 0.07,
+            "direction": 1.0,
+            "above_expectation": 0.93,
+            "magnitude": 0.745,
+            "continuing": 0.64
+          },
+          "blocked_by": [
+            "market_moving",
+            "official_announcement"
+          ],
+          "low_confidence": [
+            "magnitude"
+          ],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 7,
+      "title": "「5営業日続伸、明らかな買いシグナル」という記事（大湖精機）",
+      "aim": "official_announcement が落とす",
+      "style": "記事調・短い",
+      "criteria_flag": "明記なし（false 側の「アナリストの分析記事」に近いが、署名のない相場記事）",
+      "note": null,
+      "has_expectation": false,
+      "state": {
+        "銘柄": {
+          "名前": "大湖精機",
+          "コード": "9004"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "大湖精機株は5営業日続伸した。出来高も増加しており、これは明らかな買いシグナルである。上昇基調は今後も続くとみられる。"
+        },
+        "事前の予想": {
+          "会社予想": ""
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.79,
+            "normalized": 0.79,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.06,
+            "normalized": 0.06,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.11,
+            "normalized": 0.11,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 1.95,
+            "normalized": 0.975,
+            "confidence": 0.92
+          },
+          "above_expectation": {
+            "raw": 1.47,
+            "normalized": 0.735,
+            "confidence": 0.26
+          },
+          "magnitude": {
+            "raw": 0.13,
+            "normalized": 0.065,
+            "confidence": 0.8
+          },
+          "continuing": {
+            "raw": 0.53,
+            "normalized": 0.53,
+            "confidence": null
+          }
+        },
+        "blocked_by": [
+          "market_moving",
+          "official_announcement"
+        ],
+        "low_confidence": [
+          "above_expectation"
+        ],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.79,
+            "market_moving": 0.06,
+            "official_announcement": 0.11,
+            "direction": 0.975,
+            "above_expectation": 0.735,
+            "magnitude": 0.065,
+            "continuing": 0.53
+          },
+          "blocked_by": [
+            "market_moving",
+            "official_announcement"
+          ],
+          "low_confidence": [
+            "above_expectation"
+          ],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 8,
+      "title": "通期業績予想の下方修正（行田システム）",
+      "aim": "direction が落とす",
+      "style": "経緯を詳しく書いたもの",
+      "criteria_flag": "明記あり（true 側：業績の下方修正）",
+      "note": null,
+      "has_expectation": true,
+      "state": {
+        "銘柄": {
+          "名前": "行田システム",
+          "コード": "9007"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "当社は2027年3月期の通期連結業績予想を修正いたします。期初においては、大型の基幹システム更改案件が下期に複数立ち上がる前提を置いておりましたが、顧客側の投資判断が慎重となり、2件が翌期以降へ延期となりました。加えて、技術者の採用単価が上昇し、外注費が想定を上回って推移しております。これらの結果、売上高は620億円（従来予想700億円）、営業利益は28億円（同55億円）を見込みます。なお、延期となった案件については受注自体が失われたものではないと認識しております。"
+        },
+        "事前の予想": {
+          "会社予想": "2027年3月期 連結営業利益 55億円（前期比 12%増）"
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.91,
+            "normalized": 0.91,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.98,
+            "normalized": 0.98,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.81,
+            "normalized": 0.81,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 0.0,
+            "normalized": 0.0,
+            "confidence": 1.0
+          },
+          "above_expectation": {
+            "raw": 0.0,
+            "normalized": 0.0,
+            "confidence": 1.0
+          },
+          "magnitude": {
+            "raw": 1.99,
+            "normalized": 0.995,
+            "confidence": 0.99
+          },
+          "continuing": {
+            "raw": 0.61,
+            "normalized": 0.61,
+            "confidence": null
+          }
+        },
+        "blocked_by": [
+          "direction"
+        ],
+        "low_confidence": [],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.91,
+            "market_moving": 0.98,
+            "official_announcement": 0.81,
+            "direction": 0.0,
+            "above_expectation": 0.0,
+            "magnitude": 0.995,
+            "continuing": 0.61
+          },
+          "blocked_by": [
+            "direction"
+          ],
+          "low_confidence": [],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 9,
+      "title": "特別損失の計上（富士見運輸）",
+      "aim": "direction が落とす",
+      "style": "淡々とした開示文調",
+      "criteria_flag": "明記なし（業績に直結する）",
+      "note": null,
+      "has_expectation": false,
+      "state": {
+        "銘柄": {
+          "名前": "富士見運輸",
+          "コード": "9006"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "当社は、関東地区の配送センター1拠点を閉鎖することを決定し、これに伴う固定資産の除却損および従業員の配置転換費用として、2027年3月期第2四半期に特別損失18億円を計上いたします。"
+        },
+        "事前の予想": {
+          "会社予想": ""
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.86,
+            "normalized": 0.86,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.92,
+            "normalized": 0.92,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.79,
+            "normalized": 0.79,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 0.01,
+            "normalized": 0.005,
+            "confidence": 0.98
+          },
+          "above_expectation": {
+            "raw": 0.36,
+            "normalized": 0.18,
+            "confidence": 0.46
+          },
+          "magnitude": {
+            "raw": 1.51,
+            "normalized": 0.755,
+            "confidence": 0.27
+          },
+          "continuing": {
+            "raw": 0.45,
+            "normalized": 0.45,
+            "confidence": null
+          }
+        },
+        "blocked_by": [
+          "direction"
+        ],
+        "low_confidence": [
+          "above_expectation",
+          "magnitude"
+        ],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.86,
+            "market_moving": 0.92,
+            "official_announcement": 0.79,
+            "direction": 0.005,
+            "above_expectation": 0.18,
+            "magnitude": 0.755,
+            "continuing": 0.45
+          },
+          "blocked_by": [
+            "direction"
+          ],
+          "low_confidence": [
+            "above_expectation",
+            "magnitude"
+          ],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 10,
+      "title": "業務提携の発表（白馬製薬）",
+      "aim": "market_moving が業績への直結を判断できるか",
+      "style": "経緯を詳しく書いたもの",
+      "criteria_flag": "明記あり（true 側：業務提携）",
+      "note": null,
+      "has_expectation": false,
+      "state": {
+        "銘柄": {
+          "名前": "白馬製薬",
+          "コード": "9008"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "当社は本日、診断支援システムを手がける国内企業との業務提携契約を締結いたしました。両社はこれまで共同研究を通じて関係を深めてまいりましたが、今回の提携により、当社の主力領域である循環器分野において、診断から治療までを一貫して提案できる体制を構築いたします。提携の対価としての資本の移動は伴いません。本提携が当期の連結業績に与える影響は軽微であります。"
+        },
+        "事前の予想": {
+          "会社予想": ""
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.83,
+            "normalized": 0.83,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.64,
+            "normalized": 0.64,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.84,
+            "normalized": 0.84,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 1.53,
+            "normalized": 0.765,
+            "confidence": 0.3
+          },
+          "above_expectation": {
+            "raw": 1.03,
+            "normalized": 0.515,
+            "confidence": 0.91
+          },
+          "magnitude": {
+            "raw": 0.0,
+            "normalized": 0.0,
+            "confidence": 1.0
+          },
+          "continuing": {
+            "raw": 0.41,
+            "normalized": 0.41,
+            "confidence": null
+          }
+        },
+        "blocked_by": [],
+        "low_confidence": [
+          "direction"
+        ],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.83,
+            "market_moving": 0.64,
+            "official_announcement": 0.84,
+            "direction": 0.765,
+            "above_expectation": 0.515,
+            "magnitude": 0.0,
+            "continuing": 0.41
+          },
+          "blocked_by": [],
+          "low_confidence": [
+            "direction"
+          ],
+          "score": null
+        },
+        {
+          "run": 2,
+          "answers": {
+            "new_info": 0.86,
+            "market_moving": 0.63,
+            "official_announcement": 0.84,
+            "direction": 0.785,
+            "above_expectation": 0.52,
+            "magnitude": 0.0,
+            "continuing": 0.4
+          },
+          "blocked_by": [],
+          "low_confidence": [
+            "direction"
+          ],
+          "score": null
+        },
+        {
+          "run": 3,
+          "answers": {
+            "new_info": 0.85,
+            "market_moving": 0.61,
+            "official_announcement": 0.84,
+            "direction": 0.77,
+            "above_expectation": 0.515,
+            "magnitude": 0.0,
+            "continuing": 0.38
+          },
+          "blocked_by": [],
+          "low_confidence": [
+            "direction"
+          ],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 11,
+      "title": "新製品の発売（蒼井フーズ）",
+      "aim": "market_moving が業績への直結を判断できるか",
+      "style": "宣伝調",
+      "criteria_flag": "明記なし（業績への直結は自明でない）",
+      "note": null,
+      "has_expectation": false,
+      "state": {
+        "銘柄": {
+          "名前": "蒼井フーズ",
+          "コード": "9001"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "蒼井フーズは、冷凍米飯の新シリーズ「蒼井の炒飯工房」3品を10月6日より全国のスーパーマーケットで発売します。専用の高火力炒め機を新工場に導入し、家庭では再現しにくい強い火入れを実現しました。想定小売価格は各398円（税別）です。初年度10億円の売上を目指します。"
+        },
+        "事前の予想": {
+          "会社予想": ""
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.87,
+            "normalized": 0.87,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.61,
+            "normalized": 0.61,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.69,
+            "normalized": 0.69,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 1.96,
+            "normalized": 0.98,
+            "confidence": 0.94
+          },
+          "above_expectation": {
+            "raw": 1.13,
+            "normalized": 0.565,
+            "confidence": 0.73
+          },
+          "magnitude": {
+            "raw": 0.76,
+            "normalized": 0.38,
+            "confidence": 0.46
+          },
+          "continuing": {
+            "raw": 0.44,
+            "normalized": 0.44,
+            "confidence": null
+          }
+        },
+        "blocked_by": [],
+        "low_confidence": [
+          "magnitude"
+        ],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.87,
+            "market_moving": 0.61,
+            "official_announcement": 0.69,
+            "direction": 0.98,
+            "above_expectation": 0.565,
+            "magnitude": 0.38,
+            "continuing": 0.44
+          },
+          "blocked_by": [],
+          "low_confidence": [
+            "magnitude"
+          ],
+          "score": null
+        },
+        {
+          "run": 2,
+          "answers": {
+            "new_info": 0.87,
+            "market_moving": 0.62,
+            "official_announcement": 0.7,
+            "direction": 0.985,
+            "above_expectation": 0.55,
+            "magnitude": 0.38,
+            "continuing": 0.45
+          },
+          "blocked_by": [],
+          "low_confidence": [
+            "magnitude"
+          ],
+          "score": null
+        },
+        {
+          "run": 3,
+          "answers": {
+            "new_info": 0.88,
+            "market_moving": 0.62,
+            "official_announcement": 0.68,
+            "direction": 0.985,
+            "above_expectation": 0.555,
+            "magnitude": 0.38,
+            "continuing": 0.44
+          },
+          "blocked_by": [],
+          "low_confidence": [
+            "magnitude"
+          ],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 12,
+      "title": "増収減益の決算（榎木商事）",
+      "aim": "direction が中間に置けるか",
+      "style": "決算短信調",
+      "criteria_flag": "明記あり（true 側：決算発表）",
+      "note": "事前の予想は通期、本文は第2四半期累計。above_expectation の比較の軸がずれている（本番でも起きる構造なので直さない）",
+      "has_expectation": true,
+      "state": {
+        "銘柄": {
+          "名前": "榎木商事",
+          "コード": "9005"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "当第2四半期連結累計期間の売上高は1,062億円（前年同期比6.2%増）となりました。一方、仕入価格の上昇分を販売価格へ十分に転嫁できなかったことに加え、物流費および人件費が増加したことにより、営業利益は38億円（同4.8%減）となりました。通期の連結業績予想につきましては、期初の公表値を据え置いております。"
+        },
+        "事前の予想": {
+          "会社予想": "2027年3月期 連結営業利益 80億円（前期比 3%増）"
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.81,
+            "normalized": 0.81,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.96,
+            "normalized": 0.96,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.8,
+            "normalized": 0.8,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 0.59,
+            "normalized": 0.295,
+            "confidence": 0.22
+          },
+          "above_expectation": {
+            "raw": 0.66,
+            "normalized": 0.33,
+            "confidence": 0.41
+          },
+          "magnitude": {
+            "raw": 0.84,
+            "normalized": 0.42,
+            "confidence": 0.53
+          },
+          "continuing": {
+            "raw": 0.58,
+            "normalized": 0.58,
+            "confidence": null
+          }
+        },
+        "blocked_by": [
+          "direction"
+        ],
+        "low_confidence": [
+          "direction",
+          "above_expectation",
+          "magnitude"
+        ],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.81,
+            "market_moving": 0.96,
+            "official_announcement": 0.8,
+            "direction": 0.295,
+            "above_expectation": 0.33,
+            "magnitude": 0.42,
+            "continuing": 0.58
+          },
+          "blocked_by": [
+            "direction"
+          ],
+          "low_confidence": [
+            "direction",
+            "above_expectation",
+            "magnitude"
+          ],
+          "score": null
+        },
+        {
+          "run": 2,
+          "answers": {
+            "new_info": 0.8,
+            "market_moving": 0.97,
+            "official_announcement": 0.79,
+            "direction": 0.285,
+            "above_expectation": 0.275,
+            "magnitude": 0.43,
+            "continuing": 0.59
+          },
+          "blocked_by": [
+            "direction"
+          ],
+          "low_confidence": [
+            "direction",
+            "above_expectation",
+            "magnitude"
+          ],
+          "score": null
+        },
+        {
+          "run": 3,
+          "answers": {
+            "new_info": 0.78,
+            "market_moving": 0.97,
+            "official_announcement": 0.79,
+            "direction": 0.285,
+            "above_expectation": 0.3,
+            "magnitude": 0.445,
+            "continuing": 0.58
+          },
+          "blocked_by": [
+            "direction"
+          ],
+          "low_confidence": [
+            "direction",
+            "above_expectation",
+            "magnitude"
+          ],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 13,
+      "title": "開示事項の一部訂正（千鳥化学）",
+      "aim": "new_info がどう扱うか",
+      "style": "定型・短い",
+      "criteria_flag": "明記なし（false 側の「既報の焼き直し」に近いが、訂正は新しい情報を含みうる）",
+      "note": null,
+      "has_expectation": false,
+      "state": {
+        "銘柄": {
+          "名前": "千鳥化学",
+          "コード": "9003"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "2026年9月18日に公表いたしました「2027年3月期第1四半期決算短信」の記載事項に一部誤りがありましたので、下記のとおり訂正いたします。訂正箇所は添付資料8ページのセグメント別売上高の内訳であり、連結の売上高および各段階利益に変更はありません。"
+        },
+        "事前の予想": {
+          "会社予想": ""
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.56,
+            "normalized": 0.56,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.13,
+            "normalized": 0.13,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.89,
+            "normalized": 0.89,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 0.83,
+            "normalized": 0.415,
+            "confidence": 0.72
+          },
+          "above_expectation": {
+            "raw": 0.99,
+            "normalized": 0.495,
+            "confidence": 0.98
+          },
+          "magnitude": {
+            "raw": 0.01,
+            "normalized": 0.005,
+            "confidence": 0.99
+          },
+          "continuing": {
+            "raw": 0.15,
+            "normalized": 0.15,
+            "confidence": null
+          }
+        },
+        "blocked_by": [
+          "new_info",
+          "market_moving",
+          "direction"
+        ],
+        "low_confidence": [],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.56,
+            "market_moving": 0.13,
+            "official_announcement": 0.89,
+            "direction": 0.415,
+            "above_expectation": 0.495,
+            "magnitude": 0.005,
+            "continuing": 0.15
+          },
+          "blocked_by": [
+            "new_info",
+            "market_moving",
+            "direction"
+          ],
+          "low_confidence": [],
+          "score": null
+        },
+        {
+          "run": 2,
+          "answers": {
+            "new_info": 0.58,
+            "market_moving": 0.14,
+            "official_announcement": 0.87,
+            "direction": 0.395,
+            "above_expectation": 0.495,
+            "magnitude": 0.005,
+            "continuing": 0.15
+          },
+          "blocked_by": [
+            "new_info",
+            "market_moving",
+            "direction"
+          ],
+          "low_confidence": [
+            "direction"
+          ],
+          "score": null
+        },
+        {
+          "run": 3,
+          "answers": {
+            "new_info": 0.55,
+            "market_moving": 0.14,
+            "official_announcement": 0.87,
+            "direction": 0.4,
+            "above_expectation": 0.495,
+            "magnitude": 0.005,
+            "continuing": 0.14
+          },
+          "blocked_by": [
+            "new_info",
+            "market_moving",
+            "direction"
+          ],
+          "low_confidence": [
+            "direction"
+          ],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 14,
+      "title": "通期予想は据え置きの決算（大湖精機）",
+      "aim": "direction と above_expectation の振る舞い",
+      "style": "決算短信調",
+      "criteria_flag": "明記あり（true 側：決算発表）",
+      "note": "事前の予想は通期、本文は第2四半期累計。above_expectation の比較の軸がずれている（本番でも起きる構造なので直さない）",
+      "has_expectation": true,
+      "state": {
+        "銘柄": {
+          "名前": "大湖精機",
+          "コード": "9004"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "当第2四半期連結累計期間の売上高は418億円（前年同期比9.1%増）、営業利益は52億円（同12.4%増）となりました。新工場の稼働により生産能力が向上し、受注残の消化が進んだことによるものです。通期の連結業績予想につきましては、下期の為替前提および原材料市況を慎重に見込み、期初の公表値を据え置いております。"
+        },
+        "事前の予想": {
+          "会社予想": "2027年3月期 連結営業利益 98億円（前期比 8%増）"
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.82,
+            "normalized": 0.82,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.97,
+            "normalized": 0.97,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.8,
+            "normalized": 0.8,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 1.98,
+            "normalized": 0.99,
+            "confidence": 0.97
+          },
+          "above_expectation": {
+            "raw": 1.29,
+            "normalized": 0.645,
+            "confidence": 0.46
+          },
+          "magnitude": {
+            "raw": 1.08,
+            "normalized": 0.54,
+            "confidence": 0.44
+          },
+          "continuing": {
+            "raw": 0.55,
+            "normalized": 0.55,
+            "confidence": null
+          }
+        },
+        "blocked_by": [],
+        "low_confidence": [
+          "above_expectation",
+          "magnitude"
+        ],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.82,
+            "market_moving": 0.97,
+            "official_announcement": 0.8,
+            "direction": 0.99,
+            "above_expectation": 0.645,
+            "magnitude": 0.54,
+            "continuing": 0.55
+          },
+          "blocked_by": [],
+          "low_confidence": [
+            "above_expectation",
+            "magnitude"
+          ],
+          "score": null
+        },
+        {
+          "run": 2,
+          "answers": {
+            "new_info": 0.82,
+            "market_moving": 0.97,
+            "official_announcement": 0.81,
+            "direction": 0.99,
+            "above_expectation": 0.64,
+            "magnitude": 0.55,
+            "continuing": 0.56
+          },
+          "blocked_by": [],
+          "low_confidence": [
+            "above_expectation",
+            "magnitude"
+          ],
+          "score": null
+        },
+        {
+          "run": 3,
+          "answers": {
+            "new_info": 0.82,
+            "market_moving": 0.96,
+            "official_announcement": 0.81,
+            "direction": 0.99,
+            "above_expectation": 0.665,
+            "magnitude": 0.53,
+            "continuing": 0.57
+          },
+          "blocked_by": [],
+          "low_confidence": [
+            "above_expectation",
+            "magnitude"
+          ],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 15,
+      "title": "株式分割のお知らせ（千鳥化学）",
+      "aim": "criteria に無い種類で、業績に直結しない材料を落とせるか",
+      "style": "定型の開示文",
+      "criteria_flag": "明記なし（業績に直結しない）",
+      "note": null,
+      "has_expectation": false,
+      "state": {
+        "銘柄": {
+          "名前": "千鳥化学",
+          "コード": "9003"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "当社は、本日開催の取締役会において、株式分割および定款の一部変更について決議いたしましたので、お知らせいたします。2026年12月31日を基準日として、同日最終の株主名簿に記載された株主の所有普通株式1株につき3株の割合をもって分割いたします。効力発生日は2027年1月1日です。投資単位当たりの金額を引き下げ、株式の流動性の向上と投資家層の拡大を図ることを目的としております。本株式分割により、当期の連結業績に与える影響はありません。"
+        },
+        "事前の予想": {
+          "会社予想": ""
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.81,
+            "normalized": 0.81,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.06,
+            "normalized": 0.06,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.9,
+            "normalized": 0.9,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 1.57,
+            "normalized": 0.785,
+            "confidence": 0.35
+          },
+          "above_expectation": {
+            "raw": 1.01,
+            "normalized": 0.505,
+            "confidence": 0.94
+          },
+          "magnitude": {
+            "raw": 0.01,
+            "normalized": 0.005,
+            "confidence": 0.99
+          },
+          "continuing": {
+            "raw": 0.37,
+            "normalized": 0.37,
+            "confidence": null
+          }
+        },
+        "blocked_by": [
+          "market_moving"
+        ],
+        "low_confidence": [
+          "direction"
+        ],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.81,
+            "market_moving": 0.06,
+            "official_announcement": 0.9,
+            "direction": 0.785,
+            "above_expectation": 0.505,
+            "magnitude": 0.005,
+            "continuing": 0.37
+          },
+          "blocked_by": [
+            "market_moving"
+          ],
+          "low_confidence": [
+            "direction"
+          ],
+          "score": null
+        },
+        {
+          "run": 2,
+          "answers": {
+            "new_info": 0.83,
+            "market_moving": 0.06,
+            "official_announcement": 0.9,
+            "direction": 0.76,
+            "above_expectation": 0.515,
+            "magnitude": 0.0,
+            "continuing": 0.39
+          },
+          "blocked_by": [
+            "market_moving"
+          ],
+          "low_confidence": [
+            "direction"
+          ],
+          "score": null
+        },
+        {
+          "run": 3,
+          "answers": {
+            "new_info": 0.82,
+            "market_moving": 0.06,
+            "official_announcement": 0.89,
+            "direction": 0.78,
+            "above_expectation": 0.51,
+            "magnitude": 0.005,
+            "continuing": 0.4
+          },
+          "blocked_by": [
+            "market_moving"
+          ],
+          "low_confidence": [
+            "direction"
+          ],
+          "score": null
+        }
+      ]
+    },
+    {
+      "no": 16,
+      "title": "主要取引先の倒産に伴う貸倒引当金の計上（榎木商事）",
+      "aim": "criteria に無い種類で、業績に直結する材料を通せるか",
+      "style": "経緯を詳しく書いたもの",
+      "criteria_flag": "明記なし（業績に直結する）",
+      "note": null,
+      "has_expectation": false,
+      "state": {
+        "銘柄": {
+          "名前": "榎木商事",
+          "コード": "9005"
+        },
+        "ニュース": {
+          "日付": "2026-09-28",
+          "本文": "当社の資材部門における主要取引先である株式会社甲田建材が、本日、東京地方裁判所に破産手続開始の申立てを行いました。同社は当社の建設資材の販売先として長年にわたり取引関係にあり、2026年9月末時点の売掛金残高は24億円であります。回収可能性を慎重に検討した結果、同残高の全額について貸倒引当金を計上することといたしました。これに伴い、2027年3月期第2四半期において貸倒引当金繰入額24億円を販売費及び一般管理費に計上いたします。なお、同部門の他の取引先への影響については現在確認を進めております。"
+        },
+        "事前の予想": {
+          "会社予想": ""
+        }
+      },
+      "result": {
+        "answers": {
+          "new_info": {
+            "raw": 0.91,
+            "normalized": 0.91,
+            "confidence": null
+          },
+          "market_moving": {
+            "raw": 0.94,
+            "normalized": 0.94,
+            "confidence": null
+          },
+          "official_announcement": {
+            "raw": 0.83,
+            "normalized": 0.83,
+            "confidence": null
+          },
+          "direction": {
+            "raw": 0.0,
+            "normalized": 0.0,
+            "confidence": 1.0
+          },
+          "above_expectation": {
+            "raw": 0.06,
+            "normalized": 0.03,
+            "confidence": 0.91
+          },
+          "magnitude": {
+            "raw": 1.8,
+            "normalized": 0.9,
+            "confidence": 0.7
+          },
+          "continuing": {
+            "raw": 0.54,
+            "normalized": 0.54,
+            "confidence": null
+          }
+        },
+        "blocked_by": [
+          "direction"
+        ],
+        "low_confidence": [],
+        "score": null,
+        "listed": false
+      },
+      "runs": [
+        {
+          "run": 1,
+          "answers": {
+            "new_info": 0.91,
+            "market_moving": 0.94,
+            "official_announcement": 0.83,
+            "direction": 0.0,
+            "above_expectation": 0.03,
+            "magnitude": 0.9,
+            "continuing": 0.54
+          },
+          "blocked_by": [
+            "direction"
+          ],
+          "low_confidence": [],
+          "score": null
+        },
+        {
+          "run": 2,
+          "answers": {
+            "new_info": 0.91,
+            "market_moving": 0.94,
+            "official_announcement": 0.85,
+            "direction": 0.0,
+            "above_expectation": 0.025,
+            "magnitude": 0.905,
+            "continuing": 0.53
+          },
+          "blocked_by": [
+            "direction"
+          ],
+          "low_confidence": [],
+          "score": null
+        },
+        {
+          "run": 3,
+          "answers": {
+            "new_info": 0.91,
+            "market_moving": 0.93,
+            "official_announcement": 0.84,
+            "direction": 0.0,
+            "above_expectation": 0.03,
+            "magnitude": 0.895,
+            "continuing": 0.54
+          },
+          "blocked_by": [
+            "direction"
+          ],
+          "low_confidence": [
+            "magnitude"
+          ],
+          "score": null
+        }
+      ]
+    }
+  ]
+}
