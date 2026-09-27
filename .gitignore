@@ -1,2 +1,16 @@
+# API キー
 .env
+
+# Python
 __pycache__/
+
+# 第三者の skill。ライセンス表記のないものが混ざるため含めない。
+# 入れ方は README に書いてある。
+.claude/skills/
+
+# 本番データ（J-Quants / 適時開示）と、そこから作った加工データ。
+# J-Quants は取得データそのものの再配布を禁止している（集計結果の公開は可）。
+# 集計19（7問の値とリターンのペア）もここに出る。
+evaluation/results/
+evaluation/data/
+backend/data/real/

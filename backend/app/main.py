@@ -14,9 +14,10 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from typesafe_sdk import AsyncTypeSafeClient, TypeSafeError
 
+from app.demo import get_judgement, list_materials, settings as demo_settings
 from app.judge import ask_jev, evaluate
 from app.material import MATERIAL
-from app.models import JudgeResult
+from app.models import DemoJudgement, JudgeResult, MaterialSummary, Settings
 
 # リポジトリ直下の .env から TYPESAFE_API_KEY を環境変数に入れる。
 # SDK は環境変数しか見ない（.env は自動では読まれない）。
@@ -49,3 +50,24 @@ async def judge(request: Request) -> JudgeResult:
             detail=f"Jev の呼び出しに失敗しました（{type(error).__name__}）: {error}",
         ) from error
     return evaluate(answers, MATERIAL)
+
+
+@app.get("/api/materials", response_model=list[MaterialSummary])
+def materials() -> list[MaterialSummary]:
+    """デモで選べる材料の一覧。Jev は呼ばない。"""
+    return list_materials()
+
+
+@app.get("/api/materials/{no}", response_model=DemoJudgement)
+def material(no: int) -> DemoJudgement:
+    """材料1件と、その判定（実測値）。"""
+    judgement = get_judgement(no)
+    if judgement is None:
+        raise HTTPException(status_code=404, detail=f"材料 {no} はありません")
+    return judgement
+
+
+@app.get("/api/settings", response_model=Settings)
+def settings() -> Settings:
+    """判定に使った閾値と重み。画面で閾値の位置を示すのに使う。"""
+    return Settings(**demo_settings())

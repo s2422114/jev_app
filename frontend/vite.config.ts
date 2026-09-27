@@ -1,9 +1,10 @@
+import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   server: {
     // 開発中、/api/* を backend（uvicorn）へ転送する。
     // 本番では Render の静的サイト側の書き換えルールが同じ役目をするので、

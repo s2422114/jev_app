@@ -1,0 +1,1836 @@
+{
+  "run_at": "20260928-040027",
+  "settings": {
+    "gate_thresholds": {
+      "new_info": 0.6,
+      "market_moving": 0.6,
+      "official_announcement": 0.6,
+      "direction": 0.6
+    },
+    "min_confidence": 0.7,
+    "score_keys": [
+      "direction",
+      "above_expectation",
+      "magnitude"
+    ],
+    "weights": {
+      "above_expectation": 0.4,
+      "magnitude": 0.35,
+      "continuing": 0.25
+    },
+    "score_threshold": 0.6
+  },
+  "predictions": {
+    "1": {
+      "gates": {
+        "new_info": 0.95,
+        "market_moving": 0.97,
+        "official_announcement": 0.95,
+        "direction": 1.0
+      },
+      "verdict": "通る（score 0.85前後）",
+      "sum": {
+        "above_expectation": 1.0,
+        "magnitude": 0.9,
+        "continuing": 0.55,
+        "score": 0.85
+      }
+    },
+    "2": {
+      "gates": {
+        "new_info": 0.93,
+        "market_moving": 0.95,
+        "official_announcement": 0.96,
+        "direction": 0.85
+      },
+      "verdict": "門は通る／confidence で落ちる",
+      "sum": {
+        "above_expectation": 0.5,
+        "above_note": "conf 0.4",
+        "magnitude": 0.6,
+        "continuing": 0.4,
+        "score": 0.51
+      }
+    },
+    "3": {
+      "gates": {
+        "new_info": 0.1,
+        "market_moving": 0.15,
+        "official_announcement": 0.9,
+        "direction": 0.7
+      },
+      "verdict": "落ちる（2つ）"
+    },
+    "4": {
+      "gates": {
+        "new_info": 0.85,
+        "market_moving": 0.08,
+        "official_announcement": 0.95,
+        "direction": 0.6
+      },
+      "verdict": "落ちる"
+    },
+    "5": {
+      "gates": {
+        "new_info": 0.9,
+        "market_moving": 0.1,
+        "official_announcement": 0.96,
+        "direction": 0.5
+      },
+      "verdict": "落ちる"
+    },
+    "6": {
+      "gates": {
+        "new_info": 0.3,
+        "market_moving": 0.1,
+        "official_announcement": 0.08,
+        "direction": 0.9
+      },
+      "verdict": "落ちる（3つ）"
+    },
+    "7": {
+      "gates": {
+        "new_info": 0.15,
+        "market_moving": 0.15,
+        "official_announcement": 0.05,
+        "direction": 0.75
+      },
+      "verdict": "落ちる"
+    },
+    "8": {
+      "gates": {
+        "new_info": 0.95,
+        "market_moving": 0.96,
+        "official_announcement": 0.95,
+        "direction": 0.12
+      },
+      "verdict": "落ちる"
+    },
+    "9": {
+      "gates": {
+        "new_info": 0.93,
+        "market_moving": 0.85,
+        "official_announcement": 0.95,
+        "direction": 0.1
+      },
+      "verdict": "落ちる"
+    },
+    "10": {
+      "gates": {
+        "new_info": 0.93,
+        "market_moving": 0.75,
+        "official_announcement": 0.95,
+        "direction": 0.75
+      },
+      "verdict": "門は通る／合成で落ちる",
+      "sum": {
+        "above_expectation": 0.5,
+        "above_note": "conf 低",
+        "magnitude": 0.15,
+        "continuing": 0.7,
+        "score": 0.43
+      }
+    },
+    "11": {
+      "gates": {
+        "new_info": 0.9,
+        "market_moving": 0.5,
+        "official_announcement": 0.85,
+        "direction": 0.8
+      },
+      "verdict": "境目。落ちると予想"
+    },
+    "12": {
+      "gates": {
+        "new_info": 0.93,
+        "market_moving": 0.95,
+        "official_announcement": 0.95,
+        "direction": 0.4
+      },
+      "verdict": "落ちる"
+    },
+    "13": {
+      "gates": {
+        "new_info": 0.4,
+        "market_moving": 0.2,
+        "official_announcement": 0.95,
+        "direction": 0.5
+      },
+      "verdict": "落ちる"
+    },
+    "14": {
+      "gates": {
+        "new_info": 0.93,
+        "market_moving": 0.95,
+        "official_announcement": 0.95,
+        "direction": 0.85
+      },
+      "verdict": "通る（score 0.66前後）",
+      "sum": {
+        "above_expectation": 0.6,
+        "above_note": "conf 中",
+        "magnitude": 0.7,
+        "continuing": 0.7,
+        "score": 0.66
+      }
+    },
+    "15": {
+      "gates": {
+        "new_info": 0.9,
+        "market_moving": 0.3,
+        "official_announcement": 0.95,
+        "direction": 0.6
+      },
+      "verdict": "落ちる"
+    },
+    "16": {
+      "gates": {
+        "new_info": 0.93,
+        "market_moving": 0.8,
+        "official_announcement": 0.95,
+        "direction": 0.1
+      },
+      "verdict": "direction で落ちる"
+    }
+  },
+  "records": [
+    {
+      "no": 1,
+      "run": 1,
+      "title": "通期業績予想の上方修正（蒼井フーズ）",
+      "aim": "通る（基準）",
+      "style": "淡々とした開示文調",
+      "criteria_flag": "明記あり（true 側：業績の上方修正）",
+      "note": null,
+      "has_expectation": true,
+      "answers": {
+        "new_info": {
+          "raw": 0.92,
+          "normalized": 0.92,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.98,
+          "normalized": 0.98,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.83,
+          "normalized": 0.83,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 2.0,
+          "normalized": 1.0,
+          "confidence": 1.0
+        },
+        "above_expectation": {
+          "raw": 2.0,
+          "normalized": 1.0,
+          "confidence": 1.0
+        },
+        "magnitude": {
+          "raw": 1.87,
+          "normalized": 0.935,
+          "confidence": 0.81
+        },
+        "continuing": {
+          "raw": 0.52,
+          "normalized": 0.52,
+          "confidence": null
+        }
+      },
+      "blocked_by": [],
+      "low_confidence": [],
+      "score": 0.8572500000000001,
+      "listed": true
+    },
+    {
+      "no": 2,
+      "run": 1,
+      "title": "自己株式の取得（大湖精機）",
+      "aim": "事前の予想が空のときの挙動を見る",
+      "style": "定型の開示文",
+      "criteria_flag": "明記あり（true 側：自社株買い）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.84,
+          "normalized": 0.84,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.87,
+          "normalized": 0.87,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.89,
+          "normalized": 0.89,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.91,
+          "normalized": 0.955,
+          "confidence": 0.86
+        },
+        "above_expectation": {
+          "raw": 1.12,
+          "normalized": 0.56,
+          "confidence": 0.75
+        },
+        "magnitude": {
+          "raw": 0.57,
+          "normalized": 0.285,
+          "confidence": 0.15
+        },
+        "continuing": {
+          "raw": 0.56,
+          "normalized": 0.56,
+          "confidence": null
+        }
+      },
+      "blocked_by": [],
+      "low_confidence": [
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 3,
+      "run": 1,
+      "title": "既報の内容の再掲（千鳥化学）",
+      "aim": "new_info が落とす",
+      "style": "簡潔",
+      "criteria_flag": "明記あり（false 側：既報の焼き直し）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.15,
+          "normalized": 0.15,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.19,
+          "normalized": 0.19,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.84,
+          "normalized": 0.84,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.3,
+          "normalized": 0.65,
+          "confidence": 0.5
+        },
+        "above_expectation": {
+          "raw": 1.0,
+          "normalized": 0.5,
+          "confidence": 0.98
+        },
+        "magnitude": {
+          "raw": 0.33,
+          "normalized": 0.165,
+          "confidence": 0.51
+        },
+        "continuing": {
+          "raw": 0.47,
+          "normalized": 0.47,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "new_info",
+        "market_moving"
+      ],
+      "low_confidence": [
+        "direction",
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 4,
+      "run": 1,
+      "title": "本社移転のお知らせ（榎木商事）",
+      "aim": "market_moving が落とす",
+      "style": "簡潔",
+      "criteria_flag": "明記あり（false 側：本社移転）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.85,
+          "normalized": 0.85,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.05,
+          "normalized": 0.05,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.86,
+          "normalized": 0.86,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.07,
+          "normalized": 0.535,
+          "confidence": 0.88
+        },
+        "above_expectation": {
+          "raw": 1.0,
+          "normalized": 0.5,
+          "confidence": 0.95
+        },
+        "magnitude": {
+          "raw": 0.01,
+          "normalized": 0.005,
+          "confidence": 0.99
+        },
+        "continuing": {
+          "raw": 0.33,
+          "normalized": 0.33,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "market_moving",
+        "direction"
+      ],
+      "low_confidence": [],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 5,
+      "run": 1,
+      "title": "代表取締役の異動（紅屋電機）",
+      "aim": "market_moving が落とす",
+      "style": "定型の開示文",
+      "criteria_flag": "明記あり（false 側：人事異動）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.83,
+          "normalized": 0.83,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.06,
+          "normalized": 0.06,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.9,
+          "normalized": 0.9,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.02,
+          "normalized": 0.51,
+          "confidence": 0.92
+        },
+        "above_expectation": {
+          "raw": 0.99,
+          "normalized": 0.495,
+          "confidence": 0.95
+        },
+        "magnitude": {
+          "raw": 0.25,
+          "normalized": 0.125,
+          "confidence": 0.62
+        },
+        "continuing": {
+          "raw": 0.47,
+          "normalized": 0.47,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "market_moving",
+        "direction"
+      ],
+      "low_confidence": [
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 6,
+      "run": 1,
+      "title": "アナリストによる分析記事（蒼井フーズ）",
+      "aim": "official_announcement が落とす（new_info も同時に落ちうる。狙った門は複数）",
+      "style": "記事調",
+      "criteria_flag": "明記あり（false 側：アナリストの分析記事）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.89,
+          "normalized": 0.89,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.25,
+          "normalized": 0.25,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.07,
+          "normalized": 0.07,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 2.0,
+          "normalized": 1.0,
+          "confidence": 1.0
+        },
+        "above_expectation": {
+          "raw": 1.86,
+          "normalized": 0.93,
+          "confidence": 0.79
+        },
+        "magnitude": {
+          "raw": 1.49,
+          "normalized": 0.745,
+          "confidence": 0.24
+        },
+        "continuing": {
+          "raw": 0.64,
+          "normalized": 0.64,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "market_moving",
+        "official_announcement"
+      ],
+      "low_confidence": [
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 7,
+      "run": 1,
+      "title": "「5営業日続伸、明らかな買いシグナル」という記事（大湖精機）",
+      "aim": "official_announcement が落とす",
+      "style": "記事調・短い",
+      "criteria_flag": "明記なし（false 側の「アナリストの分析記事」に近いが、署名のない相場記事）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.79,
+          "normalized": 0.79,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.06,
+          "normalized": 0.06,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.11,
+          "normalized": 0.11,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.95,
+          "normalized": 0.975,
+          "confidence": 0.92
+        },
+        "above_expectation": {
+          "raw": 1.47,
+          "normalized": 0.735,
+          "confidence": 0.26
+        },
+        "magnitude": {
+          "raw": 0.13,
+          "normalized": 0.065,
+          "confidence": 0.8
+        },
+        "continuing": {
+          "raw": 0.53,
+          "normalized": 0.53,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "market_moving",
+        "official_announcement"
+      ],
+      "low_confidence": [
+        "above_expectation"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 8,
+      "run": 1,
+      "title": "通期業績予想の下方修正（行田システム）",
+      "aim": "direction が落とす",
+      "style": "経緯を詳しく書いたもの",
+      "criteria_flag": "明記あり（true 側：業績の下方修正）",
+      "note": null,
+      "has_expectation": true,
+      "answers": {
+        "new_info": {
+          "raw": 0.91,
+          "normalized": 0.91,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.98,
+          "normalized": 0.98,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.81,
+          "normalized": 0.81,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 0.0,
+          "normalized": 0.0,
+          "confidence": 1.0
+        },
+        "above_expectation": {
+          "raw": 0.0,
+          "normalized": 0.0,
+          "confidence": 1.0
+        },
+        "magnitude": {
+          "raw": 1.99,
+          "normalized": 0.995,
+          "confidence": 0.99
+        },
+        "continuing": {
+          "raw": 0.61,
+          "normalized": 0.61,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "direction"
+      ],
+      "low_confidence": [],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 9,
+      "run": 1,
+      "title": "特別損失の計上（富士見運輸）",
+      "aim": "direction が落とす",
+      "style": "淡々とした開示文調",
+      "criteria_flag": "明記なし（業績に直結する）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.86,
+          "normalized": 0.86,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.92,
+          "normalized": 0.92,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.79,
+          "normalized": 0.79,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 0.01,
+          "normalized": 0.005,
+          "confidence": 0.98
+        },
+        "above_expectation": {
+          "raw": 0.36,
+          "normalized": 0.18,
+          "confidence": 0.46
+        },
+        "magnitude": {
+          "raw": 1.51,
+          "normalized": 0.755,
+          "confidence": 0.27
+        },
+        "continuing": {
+          "raw": 0.45,
+          "normalized": 0.45,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "direction"
+      ],
+      "low_confidence": [
+        "above_expectation",
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 10,
+      "run": 1,
+      "title": "業務提携の発表（白馬製薬）",
+      "aim": "market_moving が業績への直結を判断できるか",
+      "style": "経緯を詳しく書いたもの",
+      "criteria_flag": "明記あり（true 側：業務提携）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.83,
+          "normalized": 0.83,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.64,
+          "normalized": 0.64,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.84,
+          "normalized": 0.84,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.53,
+          "normalized": 0.765,
+          "confidence": 0.3
+        },
+        "above_expectation": {
+          "raw": 1.03,
+          "normalized": 0.515,
+          "confidence": 0.91
+        },
+        "magnitude": {
+          "raw": 0.0,
+          "normalized": 0.0,
+          "confidence": 1.0
+        },
+        "continuing": {
+          "raw": 0.41,
+          "normalized": 0.41,
+          "confidence": null
+        }
+      },
+      "blocked_by": [],
+      "low_confidence": [
+        "direction"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 10,
+      "run": 2,
+      "title": "業務提携の発表（白馬製薬）",
+      "aim": "market_moving が業績への直結を判断できるか",
+      "style": "経緯を詳しく書いたもの",
+      "criteria_flag": "明記あり（true 側：業務提携）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.86,
+          "normalized": 0.86,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.63,
+          "normalized": 0.63,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.84,
+          "normalized": 0.84,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.57,
+          "normalized": 0.785,
+          "confidence": 0.35
+        },
+        "above_expectation": {
+          "raw": 1.04,
+          "normalized": 0.52,
+          "confidence": 0.91
+        },
+        "magnitude": {
+          "raw": 0.0,
+          "normalized": 0.0,
+          "confidence": 1.0
+        },
+        "continuing": {
+          "raw": 0.4,
+          "normalized": 0.4,
+          "confidence": null
+        }
+      },
+      "blocked_by": [],
+      "low_confidence": [
+        "direction"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 10,
+      "run": 3,
+      "title": "業務提携の発表（白馬製薬）",
+      "aim": "market_moving が業績への直結を判断できるか",
+      "style": "経緯を詳しく書いたもの",
+      "criteria_flag": "明記あり（true 側：業務提携）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.85,
+          "normalized": 0.85,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.61,
+          "normalized": 0.61,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.84,
+          "normalized": 0.84,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.54,
+          "normalized": 0.77,
+          "confidence": 0.32
+        },
+        "above_expectation": {
+          "raw": 1.03,
+          "normalized": 0.515,
+          "confidence": 0.9
+        },
+        "magnitude": {
+          "raw": 0.0,
+          "normalized": 0.0,
+          "confidence": 1.0
+        },
+        "continuing": {
+          "raw": 0.38,
+          "normalized": 0.38,
+          "confidence": null
+        }
+      },
+      "blocked_by": [],
+      "low_confidence": [
+        "direction"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 11,
+      "run": 1,
+      "title": "新製品の発売（蒼井フーズ）",
+      "aim": "market_moving が業績への直結を判断できるか",
+      "style": "宣伝調",
+      "criteria_flag": "明記なし（業績への直結は自明でない）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.87,
+          "normalized": 0.87,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.61,
+          "normalized": 0.61,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.69,
+          "normalized": 0.69,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.96,
+          "normalized": 0.98,
+          "confidence": 0.94
+        },
+        "above_expectation": {
+          "raw": 1.13,
+          "normalized": 0.565,
+          "confidence": 0.73
+        },
+        "magnitude": {
+          "raw": 0.76,
+          "normalized": 0.38,
+          "confidence": 0.46
+        },
+        "continuing": {
+          "raw": 0.44,
+          "normalized": 0.44,
+          "confidence": null
+        }
+      },
+      "blocked_by": [],
+      "low_confidence": [
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 11,
+      "run": 2,
+      "title": "新製品の発売（蒼井フーズ）",
+      "aim": "market_moving が業績への直結を判断できるか",
+      "style": "宣伝調",
+      "criteria_flag": "明記なし（業績への直結は自明でない）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.87,
+          "normalized": 0.87,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.62,
+          "normalized": 0.62,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.7,
+          "normalized": 0.7,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.97,
+          "normalized": 0.985,
+          "confidence": 0.95
+        },
+        "above_expectation": {
+          "raw": 1.1,
+          "normalized": 0.55,
+          "confidence": 0.76
+        },
+        "magnitude": {
+          "raw": 0.76,
+          "normalized": 0.38,
+          "confidence": 0.47
+        },
+        "continuing": {
+          "raw": 0.45,
+          "normalized": 0.45,
+          "confidence": null
+        }
+      },
+      "blocked_by": [],
+      "low_confidence": [
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 11,
+      "run": 3,
+      "title": "新製品の発売（蒼井フーズ）",
+      "aim": "market_moving が業績への直結を判断できるか",
+      "style": "宣伝調",
+      "criteria_flag": "明記なし（業績への直結は自明でない）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.88,
+          "normalized": 0.88,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.62,
+          "normalized": 0.62,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.68,
+          "normalized": 0.68,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.97,
+          "normalized": 0.985,
+          "confidence": 0.96
+        },
+        "above_expectation": {
+          "raw": 1.11,
+          "normalized": 0.555,
+          "confidence": 0.77
+        },
+        "magnitude": {
+          "raw": 0.76,
+          "normalized": 0.38,
+          "confidence": 0.47
+        },
+        "continuing": {
+          "raw": 0.44,
+          "normalized": 0.44,
+          "confidence": null
+        }
+      },
+      "blocked_by": [],
+      "low_confidence": [
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 12,
+      "run": 1,
+      "title": "増収減益の決算（榎木商事）",
+      "aim": "direction が中間に置けるか",
+      "style": "決算短信調",
+      "criteria_flag": "明記あり（true 側：決算発表）",
+      "note": "事前の予想は通期、本文は第2四半期累計。above_expectation の比較の軸がずれている（本番でも起きる構造なので直さない）",
+      "has_expectation": true,
+      "answers": {
+        "new_info": {
+          "raw": 0.81,
+          "normalized": 0.81,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.96,
+          "normalized": 0.96,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.8,
+          "normalized": 0.8,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 0.59,
+          "normalized": 0.295,
+          "confidence": 0.22
+        },
+        "above_expectation": {
+          "raw": 0.66,
+          "normalized": 0.33,
+          "confidence": 0.41
+        },
+        "magnitude": {
+          "raw": 0.84,
+          "normalized": 0.42,
+          "confidence": 0.53
+        },
+        "continuing": {
+          "raw": 0.58,
+          "normalized": 0.58,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "direction"
+      ],
+      "low_confidence": [
+        "direction",
+        "above_expectation",
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 12,
+      "run": 2,
+      "title": "増収減益の決算（榎木商事）",
+      "aim": "direction が中間に置けるか",
+      "style": "決算短信調",
+      "criteria_flag": "明記あり（true 側：決算発表）",
+      "note": "事前の予想は通期、本文は第2四半期累計。above_expectation の比較の軸がずれている（本番でも起きる構造なので直さない）",
+      "has_expectation": true,
+      "answers": {
+        "new_info": {
+          "raw": 0.8,
+          "normalized": 0.8,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.97,
+          "normalized": 0.97,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.79,
+          "normalized": 0.79,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 0.57,
+          "normalized": 0.285,
+          "confidence": 0.22
+        },
+        "above_expectation": {
+          "raw": 0.55,
+          "normalized": 0.275,
+          "confidence": 0.25
+        },
+        "magnitude": {
+          "raw": 0.86,
+          "normalized": 0.43,
+          "confidence": 0.53
+        },
+        "continuing": {
+          "raw": 0.59,
+          "normalized": 0.59,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "direction"
+      ],
+      "low_confidence": [
+        "direction",
+        "above_expectation",
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 12,
+      "run": 3,
+      "title": "増収減益の決算（榎木商事）",
+      "aim": "direction が中間に置けるか",
+      "style": "決算短信調",
+      "criteria_flag": "明記あり（true 側：決算発表）",
+      "note": "事前の予想は通期、本文は第2四半期累計。above_expectation の比較の軸がずれている（本番でも起きる構造なので直さない）",
+      "has_expectation": true,
+      "answers": {
+        "new_info": {
+          "raw": 0.78,
+          "normalized": 0.78,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.97,
+          "normalized": 0.97,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.79,
+          "normalized": 0.79,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 0.57,
+          "normalized": 0.285,
+          "confidence": 0.23
+        },
+        "above_expectation": {
+          "raw": 0.6,
+          "normalized": 0.3,
+          "confidence": 0.31
+        },
+        "magnitude": {
+          "raw": 0.89,
+          "normalized": 0.445,
+          "confidence": 0.52
+        },
+        "continuing": {
+          "raw": 0.58,
+          "normalized": 0.58,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "direction"
+      ],
+      "low_confidence": [
+        "direction",
+        "above_expectation",
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 13,
+      "run": 1,
+      "title": "開示事項の一部訂正（千鳥化学）",
+      "aim": "new_info がどう扱うか",
+      "style": "定型・短い",
+      "criteria_flag": "明記なし（false 側の「既報の焼き直し」に近いが、訂正は新しい情報を含みうる）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.56,
+          "normalized": 0.56,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.13,
+          "normalized": 0.13,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.89,
+          "normalized": 0.89,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 0.83,
+          "normalized": 0.415,
+          "confidence": 0.72
+        },
+        "above_expectation": {
+          "raw": 0.99,
+          "normalized": 0.495,
+          "confidence": 0.98
+        },
+        "magnitude": {
+          "raw": 0.01,
+          "normalized": 0.005,
+          "confidence": 0.99
+        },
+        "continuing": {
+          "raw": 0.15,
+          "normalized": 0.15,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "new_info",
+        "market_moving",
+        "direction"
+      ],
+      "low_confidence": [],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 13,
+      "run": 2,
+      "title": "開示事項の一部訂正（千鳥化学）",
+      "aim": "new_info がどう扱うか",
+      "style": "定型・短い",
+      "criteria_flag": "明記なし（false 側の「既報の焼き直し」に近いが、訂正は新しい情報を含みうる）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.58,
+          "normalized": 0.58,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.14,
+          "normalized": 0.14,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.87,
+          "normalized": 0.87,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 0.79,
+          "normalized": 0.395,
+          "confidence": 0.66
+        },
+        "above_expectation": {
+          "raw": 0.99,
+          "normalized": 0.495,
+          "confidence": 0.98
+        },
+        "magnitude": {
+          "raw": 0.01,
+          "normalized": 0.005,
+          "confidence": 0.99
+        },
+        "continuing": {
+          "raw": 0.15,
+          "normalized": 0.15,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "new_info",
+        "market_moving",
+        "direction"
+      ],
+      "low_confidence": [
+        "direction"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 13,
+      "run": 3,
+      "title": "開示事項の一部訂正（千鳥化学）",
+      "aim": "new_info がどう扱うか",
+      "style": "定型・短い",
+      "criteria_flag": "明記なし（false 側の「既報の焼き直し」に近いが、訂正は新しい情報を含みうる）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.55,
+          "normalized": 0.55,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.14,
+          "normalized": 0.14,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.87,
+          "normalized": 0.87,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 0.8,
+          "normalized": 0.4,
+          "confidence": 0.67
+        },
+        "above_expectation": {
+          "raw": 0.99,
+          "normalized": 0.495,
+          "confidence": 0.98
+        },
+        "magnitude": {
+          "raw": 0.01,
+          "normalized": 0.005,
+          "confidence": 0.99
+        },
+        "continuing": {
+          "raw": 0.14,
+          "normalized": 0.14,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "new_info",
+        "market_moving",
+        "direction"
+      ],
+      "low_confidence": [
+        "direction"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 14,
+      "run": 1,
+      "title": "通期予想は据え置きの決算（大湖精機）",
+      "aim": "direction と above_expectation の振る舞い",
+      "style": "決算短信調",
+      "criteria_flag": "明記あり（true 側：決算発表）",
+      "note": "事前の予想は通期、本文は第2四半期累計。above_expectation の比較の軸がずれている（本番でも起きる構造なので直さない）",
+      "has_expectation": true,
+      "answers": {
+        "new_info": {
+          "raw": 0.82,
+          "normalized": 0.82,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.97,
+          "normalized": 0.97,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.8,
+          "normalized": 0.8,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.98,
+          "normalized": 0.99,
+          "confidence": 0.97
+        },
+        "above_expectation": {
+          "raw": 1.29,
+          "normalized": 0.645,
+          "confidence": 0.46
+        },
+        "magnitude": {
+          "raw": 1.08,
+          "normalized": 0.54,
+          "confidence": 0.44
+        },
+        "continuing": {
+          "raw": 0.55,
+          "normalized": 0.55,
+          "confidence": null
+        }
+      },
+      "blocked_by": [],
+      "low_confidence": [
+        "above_expectation",
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 14,
+      "run": 2,
+      "title": "通期予想は据え置きの決算（大湖精機）",
+      "aim": "direction と above_expectation の振る舞い",
+      "style": "決算短信調",
+      "criteria_flag": "明記あり（true 側：決算発表）",
+      "note": "事前の予想は通期、本文は第2四半期累計。above_expectation の比較の軸がずれている（本番でも起きる構造なので直さない）",
+      "has_expectation": true,
+      "answers": {
+        "new_info": {
+          "raw": 0.82,
+          "normalized": 0.82,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.97,
+          "normalized": 0.97,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.81,
+          "normalized": 0.81,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.98,
+          "normalized": 0.99,
+          "confidence": 0.96
+        },
+        "above_expectation": {
+          "raw": 1.28,
+          "normalized": 0.64,
+          "confidence": 0.5
+        },
+        "magnitude": {
+          "raw": 1.1,
+          "normalized": 0.55,
+          "confidence": 0.46
+        },
+        "continuing": {
+          "raw": 0.56,
+          "normalized": 0.56,
+          "confidence": null
+        }
+      },
+      "blocked_by": [],
+      "low_confidence": [
+        "above_expectation",
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 14,
+      "run": 3,
+      "title": "通期予想は据え置きの決算（大湖精機）",
+      "aim": "direction と above_expectation の振る舞い",
+      "style": "決算短信調",
+      "criteria_flag": "明記あり（true 側：決算発表）",
+      "note": "事前の予想は通期、本文は第2四半期累計。above_expectation の比較の軸がずれている（本番でも起きる構造なので直さない）",
+      "has_expectation": true,
+      "answers": {
+        "new_info": {
+          "raw": 0.82,
+          "normalized": 0.82,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.96,
+          "normalized": 0.96,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.81,
+          "normalized": 0.81,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.98,
+          "normalized": 0.99,
+          "confidence": 0.97
+        },
+        "above_expectation": {
+          "raw": 1.33,
+          "normalized": 0.665,
+          "confidence": 0.41
+        },
+        "magnitude": {
+          "raw": 1.06,
+          "normalized": 0.53,
+          "confidence": 0.42
+        },
+        "continuing": {
+          "raw": 0.57,
+          "normalized": 0.57,
+          "confidence": null
+        }
+      },
+      "blocked_by": [],
+      "low_confidence": [
+        "above_expectation",
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 15,
+      "run": 1,
+      "title": "株式分割のお知らせ（千鳥化学）",
+      "aim": "criteria に無い種類で、業績に直結しない材料を落とせるか",
+      "style": "定型の開示文",
+      "criteria_flag": "明記なし（業績に直結しない）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.81,
+          "normalized": 0.81,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.06,
+          "normalized": 0.06,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.9,
+          "normalized": 0.9,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.57,
+          "normalized": 0.785,
+          "confidence": 0.35
+        },
+        "above_expectation": {
+          "raw": 1.01,
+          "normalized": 0.505,
+          "confidence": 0.94
+        },
+        "magnitude": {
+          "raw": 0.01,
+          "normalized": 0.005,
+          "confidence": 0.99
+        },
+        "continuing": {
+          "raw": 0.37,
+          "normalized": 0.37,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "market_moving"
+      ],
+      "low_confidence": [
+        "direction"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 15,
+      "run": 2,
+      "title": "株式分割のお知らせ（千鳥化学）",
+      "aim": "criteria に無い種類で、業績に直結しない材料を落とせるか",
+      "style": "定型の開示文",
+      "criteria_flag": "明記なし（業績に直結しない）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.83,
+          "normalized": 0.83,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.06,
+          "normalized": 0.06,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.9,
+          "normalized": 0.9,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.52,
+          "normalized": 0.76,
+          "confidence": 0.28
+        },
+        "above_expectation": {
+          "raw": 1.03,
+          "normalized": 0.515,
+          "confidence": 0.91
+        },
+        "magnitude": {
+          "raw": 0.0,
+          "normalized": 0.0,
+          "confidence": 0.99
+        },
+        "continuing": {
+          "raw": 0.39,
+          "normalized": 0.39,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "market_moving"
+      ],
+      "low_confidence": [
+        "direction"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 15,
+      "run": 3,
+      "title": "株式分割のお知らせ（千鳥化学）",
+      "aim": "criteria に無い種類で、業績に直結しない材料を落とせるか",
+      "style": "定型の開示文",
+      "criteria_flag": "明記なし（業績に直結しない）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.82,
+          "normalized": 0.82,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.06,
+          "normalized": 0.06,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.89,
+          "normalized": 0.89,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 1.56,
+          "normalized": 0.78,
+          "confidence": 0.34
+        },
+        "above_expectation": {
+          "raw": 1.02,
+          "normalized": 0.51,
+          "confidence": 0.92
+        },
+        "magnitude": {
+          "raw": 0.01,
+          "normalized": 0.005,
+          "confidence": 0.99
+        },
+        "continuing": {
+          "raw": 0.4,
+          "normalized": 0.4,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "market_moving"
+      ],
+      "low_confidence": [
+        "direction"
+      ],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 16,
+      "run": 1,
+      "title": "主要取引先の倒産に伴う貸倒引当金の計上（榎木商事）",
+      "aim": "criteria に無い種類で、業績に直結する材料を通せるか",
+      "style": "経緯を詳しく書いたもの",
+      "criteria_flag": "明記なし（業績に直結する）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.91,
+          "normalized": 0.91,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.94,
+          "normalized": 0.94,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.83,
+          "normalized": 0.83,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 0.0,
+          "normalized": 0.0,
+          "confidence": 1.0
+        },
+        "above_expectation": {
+          "raw": 0.06,
+          "normalized": 0.03,
+          "confidence": 0.91
+        },
+        "magnitude": {
+          "raw": 1.8,
+          "normalized": 0.9,
+          "confidence": 0.7
+        },
+        "continuing": {
+          "raw": 0.54,
+          "normalized": 0.54,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "direction"
+      ],
+      "low_confidence": [],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 16,
+      "run": 2,
+      "title": "主要取引先の倒産に伴う貸倒引当金の計上（榎木商事）",
+      "aim": "criteria に無い種類で、業績に直結する材料を通せるか",
+      "style": "経緯を詳しく書いたもの",
+      "criteria_flag": "明記なし（業績に直結する）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.91,
+          "normalized": 0.91,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.94,
+          "normalized": 0.94,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.85,
+          "normalized": 0.85,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 0.0,
+          "normalized": 0.0,
+          "confidence": 1.0
+        },
+        "above_expectation": {
+          "raw": 0.05,
+          "normalized": 0.025,
+          "confidence": 0.92
+        },
+        "magnitude": {
+          "raw": 1.81,
+          "normalized": 0.905,
+          "confidence": 0.71
+        },
+        "continuing": {
+          "raw": 0.53,
+          "normalized": 0.53,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "direction"
+      ],
+      "low_confidence": [],
+      "score": null,
+      "listed": false
+    },
+    {
+      "no": 16,
+      "run": 3,
+      "title": "主要取引先の倒産に伴う貸倒引当金の計上（榎木商事）",
+      "aim": "criteria に無い種類で、業績に直結する材料を通せるか",
+      "style": "経緯を詳しく書いたもの",
+      "criteria_flag": "明記なし（業績に直結する）",
+      "note": null,
+      "has_expectation": false,
+      "answers": {
+        "new_info": {
+          "raw": 0.91,
+          "normalized": 0.91,
+          "confidence": null
+        },
+        "market_moving": {
+          "raw": 0.93,
+          "normalized": 0.93,
+          "confidence": null
+        },
+        "official_announcement": {
+          "raw": 0.84,
+          "normalized": 0.84,
+          "confidence": null
+        },
+        "direction": {
+          "raw": 0.0,
+          "normalized": 0.0,
+          "confidence": 0.99
+        },
+        "above_expectation": {
+          "raw": 0.06,
+          "normalized": 0.03,
+          "confidence": 0.91
+        },
+        "magnitude": {
+          "raw": 1.79,
+          "normalized": 0.895,
+          "confidence": 0.68
+        },
+        "continuing": {
+          "raw": 0.54,
+          "normalized": 0.54,
+          "confidence": null
+        }
+      },
+      "blocked_by": [
+        "direction"
+      ],
+      "low_confidence": [
+        "magnitude"
+      ],
+      "score": null,
+      "listed": false
+    }
+  ]
+}
