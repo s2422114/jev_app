@@ -99,3 +99,61 @@ class Settings(BaseModel):
     measured_at: str
     """この判定を実測した日時。"""
     model: str
+
+
+class Stat(BaseModel):
+    """ある買い方の成績。"""
+
+    count: int
+    cumulative: float
+    mean: float
+    median: float
+    win_rate: float
+    stdev: float
+    max_drawdown: float
+
+
+class SweepRow(BaseModel):
+    threshold: float
+    count: int
+    mean: float
+
+
+class Permutation(BaseModel):
+    """同じ件数をランダムに選んだ場合との比較。偶然との区別に使う。"""
+
+    listed: int
+    observed: float | None = None
+    trials: int | None = None
+    random_at_least: float | None = None
+    p5: float | None = None
+    p95: float | None = None
+    histogram: dict | None = None
+
+
+class ConfidenceBand(BaseModel):
+    band: str
+    count: int
+    mean: float
+    win_rate: float
+
+
+class BlockedRow(BaseModel):
+    count: int
+    mean: float
+
+
+class Evaluation(BaseModel):
+    """評価結果。画面に出す5つの集計だけを返す。"""
+
+    demo: bool
+    """デモ（架空のリターン）かどうか。画面で必ず明示する。"""
+    notice: str | None = None
+    period: str
+    count: int
+    settings: dict
+    comparison: dict[str, Stat]
+    score_sweep: list[SweepRow]
+    permutation: Permutation
+    confidence_bands: list[ConfidenceBand]
+    blocked: dict[str, BlockedRow]

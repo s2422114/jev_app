@@ -2,7 +2,7 @@
 // "/api/..." と書けば、開発では vite のプロキシが、本番では Render の
 // 書き換えルールが backend に転送する。
 
-import type { DemoJudgement, MaterialSummary, Settings } from './types'
+import type { DemoJudgement, Evaluation, MaterialSummary, Settings } from './types'
 
 // Render の無料枠は15分アクセスがないと停止し、再起動に約1分かかる。
 const TIMEOUT_MS = 90_000
@@ -41,3 +41,6 @@ export const fetchJudgement = (no: number, signal?: AbortSignal) =>
 
 export const fetchSettings = (signal?: AbortSignal) =>
   getJson<Settings>('/api/settings', signal)
+
+export const fetchEvaluation = (signal?: AbortSignal) =>
+  getJson<Evaluation>('/api/evaluation', signal)

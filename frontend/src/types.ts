@@ -73,3 +73,42 @@ export type Settings = {
   measured_at: string
   model: string
 }
+
+/** ある買い方の成績。 */
+export type Stat = {
+  count: number
+  cumulative: number
+  mean: number
+  median: number
+  win_rate: number
+  stdev: number
+  max_drawdown: number
+}
+
+/** 評価結果。画面に出す5つの集計だけ。 */
+export type Evaluation = {
+  /** デモ（架空のリターン）かどうか。画面で必ず明示する。 */
+  demo: boolean
+  notice: string | null
+  period: string
+  count: number
+  settings: {
+    '門の閾値': Record<string, number>
+    'confidence 下限': number
+    '重み': Record<string, number>
+    'スコア閾値': number
+  }
+  comparison: Record<string, Stat>
+  score_sweep: { threshold: number; count: number; mean: number }[]
+  permutation: {
+    listed: number
+    observed: number | null
+    trials: number | null
+    random_at_least: number | null
+    p5: number | null
+    p95: number | null
+    histogram: { 下限: number; 区間幅: number; 件数: number[] } | null
+  }
+  confidence_bands: { band: string; count: number; mean: number; win_rate: number }[]
+  blocked: Record<string, { count: number; mean: number }>
+}

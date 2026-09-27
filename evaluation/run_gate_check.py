@@ -26,7 +26,7 @@ load_dotenv(ROOT / ".env")
 
 from typesafe_sdk import AsyncTypeSafeClient  # noqa: E402
 
-from app.judge import ask_jev, evaluate  # noqa: E402
+from app.judge import ask_jev_with_usage, evaluate  # noqa: E402
 from app.questions import (  # noqa: E402
     GATE_THRESHOLDS,
     MIN_CONFIDENCE,
@@ -45,7 +45,7 @@ async def main() -> None:
     async with AsyncTypeSafeClient() as client:
         for material in MATERIALS:
             for run_index in range(1, material["repeat"] + 1):
-                answers = await ask_jev(client, material["state"])
+                answers, usage = await ask_jev_with_usage(client, material["state"])
                 result = evaluate(answers, material["state"])
                 records.append(
                     {
@@ -59,6 +59,7 @@ async def main() -> None:
                         "has_expectation": bool(
                             material["state"]["事前の予想"]["会社予想"]
                         ),
+                        "usage": usage,
                         "answers": {k: v.model_dump() for k, v in answers.items()},
                         "blocked_by": result.blocked_by,
                         "low_confidence": result.low_confidence,

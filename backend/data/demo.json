@@ -1,5 +1,6 @@
 {
-  "source": "evaluation/results/gate_check_20260928-040027.json",
+  "source": "evaluation/demo_results/gate_check_20260928-040027.json",
+  "usage": null,
   "measured_at": "20260928-040027",
   "model": "jev-1.13.0",
   "settings": {
