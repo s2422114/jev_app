@@ -7,7 +7,7 @@
   --color-ground: #fcfcfa; /* 地 */
   --color-ink: #15171a; /* 文字 */
   --color-rule: #d8dbd5; /* 罫線 */
-  --color-muted: #7a8290; /* 補助的な文字 */
+  --color-muted: #5f6670; /* 補助的な文字。地に対するコントラスト比 5.65（本文に必要な 4.5 以上） */
   --color-pass: #3e6b5a; /* 通過 */
   --color-stop: #8c3b2e; /* 停止 */
 

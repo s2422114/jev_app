@@ -15,9 +15,10 @@ from fastapi import FastAPI, HTTPException, Request
 from typesafe_sdk import AsyncTypeSafeClient, TypeSafeError
 
 from app.demo import get_judgement, list_materials, settings as demo_settings
+from app.evaluation import evaluation as load_evaluation
 from app.judge import ask_jev, evaluate
 from app.material import MATERIAL
-from app.models import DemoJudgement, JudgeResult, MaterialSummary, Settings
+from app.models import DemoJudgement, Evaluation, JudgeResult, MaterialSummary, Settings
 
 # リポジトリ直下の .env から TYPESAFE_API_KEY を環境変数に入れる。
 # SDK は環境変数しか見ない（.env は自動では読まれない）。
@@ -71,3 +72,12 @@ def material(no: int) -> DemoJudgement:
 def settings() -> Settings:
     """判定に使った閾値と重み。画面で閾値の位置を示すのに使う。"""
     return Settings(**demo_settings())
+
+
+@app.get("/api/evaluation", response_model=Evaluation)
+def evaluation() -> Evaluation:
+    """評価結果。画面に出す5つの集計だけを返す。"""
+    data = load_evaluation()
+    if data is None:
+        raise HTTPException(status_code=404, detail="評価結果がまだありません")
+    return Evaluation(**data)

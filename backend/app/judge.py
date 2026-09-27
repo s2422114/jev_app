@@ -20,10 +20,21 @@ from app.questions import (
 
 
 async def ask_jev(client: AsyncTypeSafeClient, material: dict) -> dict[str, Answer]:
-    """7問を1リクエストで投げ、答えを 0〜1 に揃えて返す。
+    """7問を1リクエストで投げ、答えを 0〜1 に揃えて返す。"""
+    answers, _ = await ask_jev_with_usage(client, material)
+    return answers
+
+
+async def ask_jev_with_usage(
+    client: AsyncTypeSafeClient, material: dict
+) -> tuple[dict[str, Answer], dict]:
+    """答えと、そのリクエストの usage（トークン数）を返す。
 
     質問どうしは並列に評価され、互いに影響しない（実験27で確認済み）。
     分けて投げると 2.3倍高く、遅くなるだけなので、必ずまとめて投げる。
+
+    usage は評価の集計18（実行コスト）で使う。コンソールの集計は遅れることがあるので、
+    レスポンスから直接取る。
     """
     response = await client.system_one(state=material, questions=QUESTIONS)
 
@@ -41,7 +52,7 @@ async def ask_jev(client: AsyncTypeSafeClient, material: dict) -> dict[str, Answ
                 normalized=answer.score / top,
                 confidence=answer.confidence,
             )
-    return answers
+    return answers, response.usage.model_dump()
 
 
 def evaluate(answers: dict[str, Answer], material: dict) -> JudgeResult:

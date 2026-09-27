@@ -69,8 +69,17 @@ def build() -> dict:
             }
         )
 
+    usages = [r.get("usage") for r in source["records"] if r.get("usage")]
+    total_usage = None
+    if usages:
+        total_usage = {
+            "input_tokens": sum(u.get("input_tokens") or 0 for u in usages),
+            "output_tokens": sum(u.get("output_tokens") or 0 for u in usages),
+        }
+
     return {
-        "source": f"evaluation/results/gate_check_{source['run_at']}.json",
+        "source": f"evaluation/demo_results/gate_check_{source['run_at']}.json",
+        "usage": total_usage,
         "measured_at": source["run_at"],
         "model": "jev-1.13.0",
         "settings": source["settings"],

@@ -397,6 +397,15 @@ def permutation_test(records: list[Record], settings: Settings, trials: int, see
         if sample >= observed:
             better += 1
     samples.sort()
+
+    # ヒストグラム（画面で分布を描くため）。値そのものは持たず、区間と件数だけ残す。
+    bins = 24
+    low, high = samples[0], samples[-1]
+    width = (high - low) / bins if high > low else 1.0
+    counts = [0] * bins
+    for value in samples:
+        counts[min(int((value - low) / width), bins - 1)] += 1
+
     return {
         "通過件数": len(picked),
         "Jev の平均リターン": observed,
@@ -405,6 +414,7 @@ def permutation_test(records: list[Record], settings: Settings, trials: int, see
         "ランダムの平均": mean(samples),
         "ランダムの5%点": samples[int(trials * 0.05)],
         "ランダムの95%点": samples[int(trials * 0.95)],
+        "分布": {"下限": low, "区間幅": width, "件数": counts},
         "seed": seed,
     }
 

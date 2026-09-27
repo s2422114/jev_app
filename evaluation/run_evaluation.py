@@ -37,7 +37,12 @@ REAL_OUT = ROOT / "backend" / "data" / "real" / "evaluation.json"
 SEED = 20260928  # 架空のリターンを引く乱数のシード
 DAILY_SIGMA = 0.02
 START = date(2026, 6, 1)
-TUNING_RATIO = 2 / 3  # 最初の2/3が調整期間、残りが検証期間
+# 調整期間と検証期間は、件数ではなく「日付」で割る。
+# 件数で割ると切れ目が決算シーズンの途中に落ち、同じシーズン・同じ企業群が
+# 両側に入る。同じ相場の反応を両側で見ることになり、リークに近くなるため。
+# 切れ目はシーズンの谷（3月・6月・9月・12月の頭）に置く。
+# TUNING_END を含む日までが調整期間、その翌日からが検証期間。
+TUNING_END = "2026-08-06"  # デモ用。本番データが入ったら実際の期間に合わせて決める
 
 
 def build_demo_records(rng: random.Random) -> list[P.Record]:
@@ -74,23 +79,36 @@ def build_demo_records(rng: random.Random) -> list[P.Record]:
                 close_next=close_next,
             )
         )
-    return records, demo["settings"]
+    return records, demo["settings"], demo.get("usage")
 
 
 def split(records: list[P.Record]) -> tuple[list[P.Record], list[P.Record]]:
-    """日付順に並べて、最初の2/3を調整期間、残りを検証期間にする。"""
+    """日付で調整期間と検証期間に分ける。TUNING_END の日までが調整期間。"""
     ordered = sorted(records, key=lambda r: r.date)
-    cut = int(len(ordered) * TUNING_RATIO)
-    return ordered[:cut], ordered[cut:]
+    tuning = [r for r in ordered if r.date <= TUNING_END]
+    holdout = [r for r in ordered if r.date > TUNING_END]
+    return tuning, holdout
 
 
-def aggregate(records: list[P.Record], settings: P.Settings, topix: list[float], demo: bool) -> dict:
+def aggregate(
+    records: list[P.Record],
+    settings: P.Settings,
+    topix: list[float],
+    demo: bool,
+    usage: dict | None = None,
+) -> dict:
     steps = [round(0.50 + 0.05 * i, 2) for i in range(9)]  # 0.50〜0.90 を 0.05 刻み
     return {
         "デモ": demo,
         "注意": "リターンはすべて乱数で作った架空の値です。数字に意味はありません。" if demo else None,
         "期間": f"{records[0].date} 〜 {records[-1].date}",
         "件数": len(records),
+        "期間の分け方": {
+            "方法": "日付で割る（件数では割らない）",
+            "切れ目": TUNING_END,
+            "理由": "件数で割ると切れ目が決算シーズンの途中に落ち、"
+            "同じシーズンの同じ企業群が調整期間と検証期間の両方に入るため",
+        },
         "設定": {
             "門の閾値": settings.gate_thresholds,
             "confidence 下限": settings.min_confidence,
@@ -121,7 +139,7 @@ def aggregate(records: list[P.Record], settings: P.Settings, topix: list[float],
         "17_サンプリングの振れ": P.sampling_variation(
             records, settings, size=500, seeds=[1, 2, 3, 4, 5]
         ),
-        "18_実行コスト": P.cost_summary(None, request_count=len(records), seconds=None),
+        "18_実行コスト": P.cost_summary(usage, request_count=len(records), seconds=None),
     }
 
 
@@ -157,7 +175,7 @@ def main() -> None:
 
     started = time.time()
     rng = random.Random(SEED)
-    records, raw_settings = build_demo_records(rng)
+    records, raw_settings, usage = build_demo_records(rng)
     settings = P.Settings(
         gate_thresholds=raw_settings["gate_thresholds"],
         min_confidence=raw_settings["min_confidence"],
@@ -167,9 +185,14 @@ def main() -> None:
 
     tuning, holdout = split(records)
     target = tuning if args.period == "tuning" else holdout
+    if not target:
+        raise SystemExit(
+            f"{args.period} に該当する件がありません（切れ目 TUNING_END = {TUNING_END}）。"
+        )
+    print(f"切れ目 {TUNING_END}：調整 {len(tuning)}件 / 検証 {len(holdout)}件")
     topix = [rng.gauss(0.0002, DAILY_SIGMA * 0.4) for _ in target]
 
-    output = aggregate(target, settings, topix, demo=args.source == "demo")
+    output = aggregate(target, settings, topix, demo=args.source == "demo", usage=usage)
     output["18_実行コスト"]["所要秒"] = round(time.time() - started, 2)
     output["seed"] = SEED
 
