@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif">
+  <rect width="960" height="600" fill="#fcfcfa"/>
+
+  <!-- ============ 上段：システム構成 ============ -->
+  <text x="32" y="44" font-size="17" fill="#15171a">システム構成</text>
+  <line x1="32" y1="56" x2="928" y2="56" stroke="#d8dbd5"/>
+
+  <g fill="none" stroke="#15171a" stroke-width="1">
+    <rect x="32" y="82" width="150" height="62"/>
+    <rect x="248" y="82" width="196" height="62"/>
+    <rect x="510" y="82" width="196" height="62"/>
+    <rect x="772" y="82" width="156" height="62"/>
+  </g>
+
+  <g font-size="13" fill="#15171a">
+    <text x="107" y="108" text-anchor="middle">ブラウザ</text>
+    <text x="346" y="104" text-anchor="middle">静的サイト（Render）</text>
+    <text x="618" y="104" text-anchor="middle">Web サービス（Render）</text>
+    <text x="850" y="108" text-anchor="middle">TypeSafe API</text>
+  </g>
+  <g font-size="11" fill="#5f6670">
+    <text x="107" y="126" text-anchor="middle">React / Vite / Tailwind</text>
+    <text x="346" y="122" text-anchor="middle">ビルド成果物を配信</text>
+    <text x="346" y="136" text-anchor="middle">/api/* を書き換えて転送</text>
+    <text x="618" y="122" text-anchor="middle">FastAPI</text>
+    <text x="618" y="136" text-anchor="middle">判断・正規化・門・合成</text>
+    <text x="850" y="126" text-anchor="middle">Jev（jev-1.13.0）</text>
+  </g>
+
+  <g stroke="#15171a" stroke-width="1" fill="none">
+    <path d="M182 113 H240" marker-end="url(#arrow)"/>
+    <path d="M444 113 H502" marker-end="url(#arrow)"/>
+    <path d="M706 113 H764" marker-end="url(#arrow)"/>
+  </g>
+  <g font-size="10" fill="#5f6670" text-anchor="middle">
+    <text x="211" y="106">HTTPS</text>
+    <text x="473" y="106">/api/*</text>
+    <text x="735" y="106">API キー</text>
+  </g>
+
+  <g font-size="11" fill="#5f6670">
+    <text x="32" y="176">・静的サイトが /api/* を裏で転送するため、ブラウザから見れば同一ドメイン。CORS の設定は要らない。</text>
+    <text x="32" y="194">・API キーは Web サービスの環境変数だけに置く。ビルド成果物には含めない。</text>
+  </g>
+
+  <!-- ============ 下段：判断の流れ ============ -->
+  <text x="32" y="250" font-size="17" fill="#15171a">判断の流れ（開示1件あたり）</text>
+  <line x1="32" y1="262" x2="928" y2="262" stroke="#d8dbd5"/>
+
+  <!-- 1列目 -->
+  <g fill="none" stroke="#15171a" stroke-width="1">
+    <rect x="32" y="292" width="150" height="56"/>
+    <rect x="228" y="292" width="150" height="56"/>
+  </g>
+  <g font-size="13" fill="#15171a">
+    <text x="107" y="316" text-anchor="middle">開示の文章</text>
+    <text x="303" y="316" text-anchor="middle">state を組み立てる</text>
+  </g>
+  <g font-size="11" fill="#5f6670">
+    <text x="107" y="334" text-anchor="middle">銘柄・本文・事前の予想</text>
+    <text x="303" y="334" text-anchor="middle">コード</text>
+  </g>
+
+  <!-- Jev -->
+  <rect x="424" y="292" width="180" height="56" fill="none" stroke="#3e6b5a" stroke-width="2"/>
+  <text x="514" y="316" text-anchor="middle" font-size="13" fill="#3e6b5a">Jev に7問（1リクエスト）</text>
+  <text x="514" y="334" text-anchor="middle" font-size="11" fill="#5f6670">並列に評価され互いに影響しない</text>
+
+  <rect x="650" y="292" width="150" height="56" fill="none" stroke="#15171a"/>
+  <text x="725" y="316" text-anchor="middle" font-size="13" fill="#15171a">0〜1 に正規化</text>
+  <text x="725" y="334" text-anchor="middle" font-size="11" fill="#5f6670">Score は段階数で割る</text>
+
+  <g stroke="#15171a" fill="none">
+    <path d="M182 320 H220" marker-end="url(#arrow)"/>
+    <path d="M378 320 H416" marker-end="url(#arrow)"/>
+    <path d="M604 320 H642" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- 2列目：門 → confidence → 合成 -->
+  <g fill="none" stroke="#15171a" stroke-width="1">
+    <rect x="32" y="408" width="190" height="66"/>
+    <rect x="286" y="408" width="190" height="66"/>
+    <rect x="540" y="408" width="190" height="66"/>
+  </g>
+  <g font-size="13" fill="#15171a">
+    <text x="127" y="432" text-anchor="middle">門（4問）</text>
+    <text x="381" y="432" text-anchor="middle">confidence（3問）</text>
+    <text x="635" y="432" text-anchor="middle">重み付き和</text>
+  </g>
+  <g font-size="11" fill="#5f6670">
+    <text x="127" y="450" text-anchor="middle">新しい情報／業績に直結／</text>
+    <text x="127" y="464" text-anchor="middle">公式発表／良い材料か</text>
+    <text x="381" y="450" text-anchor="middle">Score の3問すべてが</text>
+    <text x="381" y="464" text-anchor="middle">下限以上か</text>
+    <text x="635" y="450" text-anchor="middle">上振れ 0.40 ／ 大きさ 0.35</text>
+    <text x="635" y="464" text-anchor="middle">／ 継続 0.25</text>
+  </g>
+
+  <!-- 上段から門へ -->
+  <path d="M725 348 V376 H127 V400" stroke="#15171a" fill="none" marker-end="url(#arrow)"/>
+
+  <g stroke="#15171a" fill="none">
+    <path d="M222 441 H278" marker-end="url(#arrow)"/>
+    <path d="M476 441 H532" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- 結果 -->
+  <rect x="794" y="408" width="134" height="66" fill="none" stroke="#3e6b5a" stroke-width="2"/>
+  <text x="861" y="436" text-anchor="middle" font-size="13" fill="#3e6b5a">翌日の</text>
+  <text x="861" y="454" text-anchor="middle" font-size="13" fill="#3e6b5a">売買リスト</text>
+  <path d="M730 441 H786" stroke="#15171a" fill="none" marker-end="url(#arrow)"/>
+  <text x="758" y="434" text-anchor="middle" font-size="10" fill="#5f6670">閾値以上</text>
+
+  <!-- 見送り -->
+  <rect x="286" y="518" width="190" height="42" fill="none" stroke="#8c3b2e" stroke-width="2"/>
+  <text x="381" y="544" text-anchor="middle" font-size="13" fill="#8c3b2e">見送り</text>
+  <g stroke="#8c3b2e" fill="none">
+    <path d="M127 474 V539 H278" marker-end="url(#arrow-stop)"/>
+    <path d="M381 474 V510" marker-end="url(#arrow-stop)"/>
+    <path d="M635 474 V539 H484" marker-end="url(#arrow-stop)"/>
+  </g>
+  <g font-size="10" fill="#8c3b2e">
+    <text x="136" y="500">1問でも閾値未満</text>
+    <text x="390" y="500">1問でも下限未満</text>
+    <text x="560" y="500" text-anchor="end">閾値未満</text>
+  </g>
+
+  <text x="32" y="586" font-size="11" fill="#5f6670">判断するのは Jev だけ。流れ・計算・閾値・副作用はすべてコードが持つ。</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#15171a"/>
+    </marker>
+    <marker id="arrow-stop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8c3b2e"/>
+    </marker>
+  </defs>
+</svg>
