@@ -127,7 +127,7 @@ export function EvalPage() {
           通過件数が少ないとき、偶然との区別はこれでしか付きません。
         </p>
         {p.histogram && p.observed !== null ? (
-          <>
+          <div className="mt-2">
             <Histogram
               counts={p.histogram['件数']}
               low={p.histogram['下限']}
@@ -142,7 +142,7 @@ export function EvalPage() {
               </span>
               。ランダムの 5%点 {pct(p.p5 ?? 0)}、95%点 {pct(p.p95 ?? 0)}。
             </p>
-          </>
+          </div>
         ) : (
           <p className="text-sm text-muted">通過した件がないため、この比較はできません。</p>
         )}

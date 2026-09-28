@@ -15,13 +15,19 @@ export function Histogram({
   format: (value: number) => string
 }) {
   const w = 520
-  const h = 180
-  const pad = { left: 12, right: 12, top: 12, bottom: 30 }
+  const h = 196
+  // 上に余白を取る。観測値のラベルを図の中に収めるため
+  // （余白が足りないと、図の上にある本文と重なって数字が読めなくなる）。
+  const pad = { left: 12, right: 12, top: 30, bottom: 30 }
   const maxCount = Math.max(...counts, 1)
   const high = low + binWidth * counts.length
   const barWidth = (w - pad.left - pad.right) / counts.length
   const px = (value: number) =>
     pad.left + ((value - low) / (high - low || 1)) * (w - pad.left - pad.right)
+
+  // 端に寄ったときにラベルがはみ出さないよう、寄せ方を変える。
+  const markerX = px(marker)
+  const anchor = markerX < 70 ? 'start' : markerX > w - 70 ? 'end' : 'middle'
 
   return (
     <svg
@@ -45,18 +51,18 @@ export function Histogram({
       })}
 
       <line
-        x1={px(marker)}
+        x1={markerX}
         y1={pad.top - 6}
-        x2={px(marker)}
+        x2={markerX}
         y2={h - pad.bottom}
         stroke="var(--color-pass)"
         strokeWidth="2"
       />
       <text
-        x={px(marker)}
-        y={pad.top - 10}
-        fontSize="10"
-        textAnchor="middle"
+        x={markerX}
+        y={pad.top - 12}
+        fontSize="11"
+        textAnchor={anchor}
         fill="var(--color-pass)"
         style={{ fontVariantNumeric: 'tabular-nums' }}
       >
